@@ -41,9 +41,9 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 | Zelena LED        | 1        | 11                  |
 | Otpornik 220Ω     | 3        | -                   |
 
-## 🛠️ Shema spojeva
+## 🛠️ Slika spojeva
 
-![Wiring Diagram](Prekidi.png) _(Primjer sheme - zamijenite sa stvarnom slikom)_
+![Wiring Diagram](Prekidi.png)
 
 ```text
 Tipkala:
