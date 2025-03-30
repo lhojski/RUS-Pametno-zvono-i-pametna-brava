@@ -85,7 +85,7 @@ U slučaju da se svi prekidi generiraju istovremeno, sustav ih obrađuje u hijer
 
 - Ako se tijekom obrade prekida aktivira prekid višeg prioriteta, trenutno aktivni prekid se prekida i prednost se daje novom prekidu.
 
-- Za najbolje testiranje ovog slučaja, preporučuje se:
+Za najbolje testiranje ovog slučaja, preporučuje se:
 
 - Pritisnuti sva tri tipkala dok je objekt ispred senzora unutar 100 cm dometa.
 
