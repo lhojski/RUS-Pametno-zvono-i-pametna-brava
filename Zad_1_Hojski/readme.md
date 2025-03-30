@@ -49,6 +49,8 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 
 ## 4. <a name="opis-rjesenja"></a>Opis rješenja
 
+[a link](https://wokwi.com/projects/426796676518937601)
+
 Bijela LED lampica signalizira prekid generiran pomoću timera svakih 2 sekunde. Ovaj prekid ima najviši prioritet i uvijek se izvršava prije svih ostalih.
 Crvena, žuta i zelena LED lampica aktiviraju se kao odgovor na prekide generirane pritiskom na odgovarajuće tipkalo. Prekidi imaju definirani prioritet gdje crvena lampica ima najviši, zatim žuta, a zatim zelena.
 Senzor udaljenosti HC-SR04 se koristi za detektiranje predmeta. Kada senzor registrira objekt bliže od 100 cm, generira se prekid najnižeg prioriteta koji pali plavu lampicu.
