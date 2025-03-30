@@ -8,11 +8,11 @@
 ## 📖 Sadržaj
 
 1. [Opis projekta](#opis-projekta)
-2. [Hardverske komponente](#-hardverske-komponente)
-3. [Slika spojeva](#-shema-spojeva)
-4. [Testiranje](#-testiranje)
-5. [Rezultat](#-rezultat)
-6. [Moguća poboljšanja](#-moguca-poboljsanja)
+2. [Hardverske komponente](#hardverske-komponente)
+3. [Slika spojeva](#slika-spojeva)
+4. [Testiranje](#testiranje)
+5. [Rezultat](#rezultat)
+6. [Moguća poboljšanja](#moguca-poboljsanja)
 
 ## <a name="opis-projekta"></a>1. Opis projekta
 
@@ -28,7 +28,7 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 - Debounce za pouzdano detektiranje tipkala
 - Serijski izlaz za debug informacije
 
-## 2. Hardverske komponente
+## <a name="hardverske-komponente"></a>2. Hardverske komponente
 
 | Komponenta        | Količina | Pin na Arduino Mega |
 | ----------------- | -------- | ------------------- |
@@ -39,16 +39,57 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 | Zelena LED        | 1        | 11                  |
 | Otpornik 220Ω     | 3        | -                   |
 
-## 3. Slika spojeva
+## <a name="slika-spojeva"></a> 3. Slika spojeva
 
 ![Wiring Diagram](Prekidi.png)
 
-## 4. Testiranje
+## 4. <a name="testiranje"></a>Testiranje
 
-### 4.1. Prilikom pritiska na neku tipku ulovi se interrupt i upali se odgovarajuća ledica
+## 📌 Test Slučaj 1: Prioritetna obrada prekida
 
-### 4.2. Ako se pritisnu sve tipke od jedno, prvo će se upaliti lampica s najvišim prioritetom. Nakon što se ona ugasi, redom se pale lampice sa sve nižim prioritetom.
+**Cilj**:
+Demonstrirati kako sustav prvo obrađuje prekid s najvišim prioritetom kada se aktiviraju višestruki prekidi istovremeno.
 
-## 5. Rezultat
+**Koraci testiranja**:
 
-## 6. Moguća poboljšanja
+1. Pritisnite sva tri tipkala (INT0, INT1, INT2) istovremeno
+2. Promatrajte redoslijed paljenja LED dioda
+
+**Očekivano ponašanje**:
+
+1. Crvena LED (INT0) upali se prva (najviši prioritet)
+2. Žuta LED (INT1) upali se nakon 1 sekunde
+3. Zelena LED (INT2) upali se nakon dodatne 1 sekunde
+
+**Tehnički detalji**:
+
+- INT0 (pin 2) ima najviši prioritet u kodu
+- Varijabla `processingInterrupt` osigurava redoslijednu obradu
+- Pauza od 1 sekunde omogućuje vizualnu potvrdu
+
+## 📌 Test Slučaj 2: Neovisna obrada pojedinačnih prekida
+
+**Cilj**:
+Pokazati kako sustav ispravno reagira na pojedinačne prekide bez utjecaja drugih ulaza.
+
+**Koraci testiranja**:
+
+1. Pritisnite samo tipkalo 1 (INT0)
+2. Ponovite za tipkalo 2 (INT1) i tipkalo 3 (INT2) posebno
+
+**Očekivano ponašanje**:
+
+- Svaki pojedinačni pritisak:
+  - Upali odgovarajuću LED diodu (crvena/žuta/zelena)
+  - Dioda ostaje upaljena točno 1 sekundu
+  - U Serial Monitoru ispisuje odgovarajuću poruku (npr. "INT0 aktiviran")
+
+**Tehnički detalji**:
+
+- Svaki prekid ima vlastitu ISR funkciju
+- Debounce osigurava jedan odaziv po pritisku
+- Neovisna obrada bez blokiranja glavnog programa
+
+## 5. <a name="rezultat"></a>Rezultat
+
+## 6. <a name="moguca-poboljsanja"></a>Moguća poboljšanja
