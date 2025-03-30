@@ -9,14 +9,12 @@
 
 1. [Opis projekta](#-opis-projekta)
 2. [Hardverske komponente](#-hardverske-komponente)
-3. [Shema spojeva](#-shema-spojeva)
-4. [Instalacija i upotreba](#%EF%B8%8F-instalacija-i-upotreba)
-5. [Funkcionalnosti](#-funkcionalnosti)
-6. [Detalji implementacije](#-detalji-implementacije)
-7. [Testiranje](#-testiranje)
-8. [Moguća poboljšanja](#-moguća-poboljšanja)
+3. [Slika spojeva](#-shema-spojeva)
+4. [Testiranje](#-testiranje)
+5. [Rezultat](#-rezultat)
+6. [Moguća poboljšanja](#-moguca-poboljsanja)
 
-## 🎯 Opis projekta
+## 1. Opis projekta
 
 Sustav demonstrira obradu višestrukih prekida s različitim prioritetima koristeći:
 
@@ -30,7 +28,7 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 - Debounce za pouzdano detektiranje tipkala
 - Serijski izlaz za debug informacije
 
-## 🔌 Hardverske komponente
+## 2. Hardverske komponente
 
 | Komponenta        | Količina | Pin na Arduino Mega |
 | ----------------- | -------- | ------------------- |
@@ -41,18 +39,16 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 | Zelena LED        | 1        | 11                  |
 | Otpornik 220Ω     | 3        | -                   |
 
-## 🛠️ Slika spojeva
+## 3. Slika spojeva
 
 ![Wiring Diagram](Prekidi.png)
 
-```text
-Tipkala:
-  [BTN1] ---- D2 (INT0) -- GND
-  [BTN2] ---- D3 (INT1) -- GND
-  [BTN3] ---- D21 (INT2) -- GND
+## 4. Testiranje
 
-LED-ice:
-  [Crvena] ---- D13 --| 220Ω |-- GND
-  [Žuta]   ---- D12 --| 220Ω |-- GND
-  [Zelena] ---- D11 --| 220Ω |-- GND
-```
+### 4.1. Prilikom pritiska na neku tipku ulovi se interrupt i upali se odgovarajuća ledica
+
+### 4.2. Ako se pritisnu sve tipke od jedno, prvo će se upaliti lampica s najvišim prioritetom. Nakon što se ona ugasi, redom se pale lampice sa sve nižim prioritetom.
+
+## 5. Rezultat
+
+## 6. Moguća poboljšanja
