@@ -7,26 +7,27 @@
 
 ## 📖 Sadržaj
 
-1. [Opis projekta](#opis-projekta)
+1. [Opis zadatka](#opis-projekta)
 2. [Hardverske komponente](#hardverske-komponente)
 3. [Slika spojeva](#slika-spojeva)
-4. [Testiranje](#testiranje)
-5. [Rezultat](#rezultat)
-6. [Moguća poboljšanja](#moguca-poboljsanja)
+4. [Opis rješenja](#opis-rjesenja)
+5. [Zaključak](#zakljucak)
 
-## <a name="opis-projekta"></a>1. Opis projekta
+## <a name="opis-projekta"></a>1. Opis zadatka
 
 Sustav demonstrira obradu višestrukih prekida s različitim prioritetima koristeći:
 
 - 3 tipkala za generiranje prekida (INT0, INT1, INT2)
 - 3 LED-ice (crvena, žuta, zelena) za vizualizaciju prioriteta
+- HC-SR04 kao senzor za udaljenost
+- Timer koji sam stvara prekide
 - Arduino Mega 2560 mikrokontroler
 
 **Ključna svojstva**:
 
-- Softversko upravljanje prioritetima
-- Debounce za pouzdano detektiranje tipkala
-- Serijski izlaz za debug informacije
+- Svaki prekid se zasebno obrađuje
+- Ako se javi prekid višeg stupnja, drugi prekidi se stavljaju na čekanje
+- Nakon što se izvrši prekid više razine počnu se redom izvršavati ostali prekidi (od najviše razine prema najnižoj)
 
 ## <a name="hardverske-komponente"></a>2. Hardverske komponente
 
@@ -37,59 +38,65 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 | Crvena LED        | 1        | 13                  |
 | Žuta LED          | 1        | 12                  |
 | Zelena LED        | 1        | 11                  |
+| Plava LED         | 1        | 10                  |
+| Bijela LED        | 1        | 9                   |
+| HC-SR04           | 1        | TRIG: 4, ECHO: 5    |
 | Otpornik 220Ω     | 3        | -                   |
 
 ## <a name="slika-spojeva"></a> 3. Slika spojeva
 
 ![Wiring Diagram](Prekidi.png)
 
-## 4. <a name="testiranje"></a>Testiranje
+## 4. <a name="opis-rjesenja"></a>Opis rješenja
 
-## 📌 Test Slučaj 1: Prioritetna obrada prekida
+Bijela LED lampica signalizira prekid generiran pomoću timera svakih 2 sekunde. Ovaj prekid ima najviši prioritet i uvijek se izvršava prije svih ostalih.
+Crvena, žuta i zelena LED lampica aktiviraju se kao odgovor na prekide generirane pritiskom na odgovarajuće tipkalo. Prekidi imaju definirani prioritet gdje crvena lampica ima najviši, zatim žuta, a zatim zelena.
+Senzor udaljenosti HC-SR04 se koristi za detektiranje predmeta. Kada senzor registrira objekt bliže od 100 cm, generira se prekid najnižeg prioriteta koji pali plavu lampicu.
 
-**Cilj**:
-Demonstrirati kako sustav prvo obrađuje prekid s najvišim prioritetom kada se aktiviraju višestruki prekidi istovremeno.
+Svaki prekid bi trebao upaliti odgovarajuću LED lampicu kako bi korisnik mogao vidjeti da se prekid ispravno obrađuje.
 
-**Koraci testiranja**:
+- Timer prekid (bijela lampica) treba se aktivirati automatski svakih 2 sekunde.
 
-1. Pritisnite sva tri tipkala (INT0, INT1, INT2) istovremeno
-2. Promatrajte redoslijed paljenja LED dioda
+- Pritiskom na tipkala INT0, INT1 i INT2 trebale bi se redom paliti crvena, žuta i zelena lampica.
 
-**Očekivano ponašanje**:
+- Kada je objekt bliže od 100 cm senzoru, plava lampica se pali kako bi signalizirala da je detekcija aktivirana.
 
-1. Crvena LED (INT0) upali se prva (najviši prioritet)
-2. Žuta LED (INT1) upali se nakon 1 sekunde
-3. Zelena LED (INT2) upali se nakon dodatne 1 sekunde
+### 4.1. Prekidi izazvani kada se pritisnu sva tipkala istovremeno
 
-**Tehnički detalji**:
+Ako korisnik istovremeno pritisne sva tri tipkala, prekidi se trebaju obrađivati po prioritetu:
 
-- INT0 (pin 2) ima najviši prioritet u kodu
-- Varijabla `processingInterrupt` osigurava redoslijednu obradu
-- Pauza od 1 sekunde omogućuje vizualnu potvrdu
+- Prvo se aktivira prekid s najvišim prioritetom - crvena lampica.
 
-## 📌 Test Slučaj 2: Neovisna obrada pojedinačnih prekida
+- Nakon što se prekid završi, aktivira se prekid srednjeg prioriteta - žuta lampica.
 
-**Cilj**:
-Pokazati kako sustav ispravno reagira na pojedinačne prekide bez utjecaja drugih ulaza.
+- Na kraju se izvršava prekid s najnižim prioritetom - zelena lampica.
 
-**Koraci testiranja**:
+Ova testna situacija potvrđuje ispravnost očuvanja i redoslijeda izvršavanja prekida prema prioritetima.
 
-1. Pritisnite samo tipkalo 1 (INT0)
-2. Ponovite za tipkalo 2 (INT1) i tipkalo 3 (INT2) posebno
+### 4.2. Korištenje svih prekida odjednom
 
-**Očekivano ponašanje**:
+U slučaju da se svi prekidi generiraju istovremeno, sustav ih obrađuje u hijerarhijskom redoslijedu:
 
-- Svaki pojedinačni pritisak:
-  - Upali odgovarajuću LED diodu (crvena/žuta/zelena)
-  - Dioda ostaje upaljena točno 1 sekundu
-  - U Serial Monitoru ispisuje odgovarajuću poruku (npr. "INT0 aktiviran")
+- Prvo se izvršava prekid generiran timerom jer ima najviši prioritet.
 
-**Tehnički detalji**:
+- Nakon toga slijede prekidi tipkala, redom od najvažnijeg do najmanje važnog (crvena → žuta → zelena lampica).
 
-- Svaki prekid ima vlastitu ISR funkciju
-- Debounce osigurava jedan odaziv po pritisku
-- Neovisna obrada bez blokiranja glavnog programa
+- Prekid senzora udaljenosti se obrađuje posljednji, budući da ima najniži prioritet.
 
-## 5. <a name="rezultat"></a>Rezultat
+- Ako se tijekom obrade prekida aktivira prekid višeg prioriteta, trenutno aktivni prekid se prekida i prednost se daje novom prekidu.
 
-## 6. <a name="moguca-poboljsanja"></a>Moguća poboljšanja
+- Za najbolje testiranje ovog slučaja, preporučuje se:
+
+- Pritisnuti sva tri tipkala dok je objekt ispred senzora unutar 100 cm dometa.
+
+- Promatrati redoslijed paljenja LED lampica kako bi se vidjelo da se prekidi izvršavaju prema definiranom prioritetu.
+
+- Nakon gašenja crvene lampice, ponovno pritisnuti tipkalo INT0 kako bi se provjerilo da ima prednost pred preostalim aktivnim prekidima.
+
+## 5. <a name="zakljucak"></a>Zakljucak
+
+Prekidi (interrupti) su ključni mehanizam u embedded sustavima jer omogućuju:
+
+1. **Brzi odgovor** - Mikrokontroler može trenutno reagirati na važne događaje bez čekanja u glavnoj petlji
+2. **Energetsku učinkovitost** - Sustav može spavati dok se ne dogodi prekid
+3. **Prioritetizaciju** - Kritični događaji se mogu obraditi prije manje važnih

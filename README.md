@@ -32,8 +32,6 @@ Projekt kombinira **pametno zvono** i **pametnu bravu** kako bi pružio moderno 
 
 ### Hardver
 
-- **Mikrokontroler:** ESP32 (Wi-Fi/Bluetooth)
-
 ### Softver
 
 - **Firmware:** Arduino IDE (C++)
