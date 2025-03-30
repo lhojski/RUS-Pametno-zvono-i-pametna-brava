@@ -7,14 +7,14 @@
 
 ## 📖 Sadržaj
 
-1. [Opis projekta](#-opis-projekta)
+1. [Opis projekta](#opis-projekta)
 2. [Hardverske komponente](#-hardverske-komponente)
 3. [Slika spojeva](#-shema-spojeva)
 4. [Testiranje](#-testiranje)
 5. [Rezultat](#-rezultat)
 6. [Moguća poboljšanja](#-moguca-poboljsanja)
 
-## 1. Opis projekta
+## <a name="opis-projekta"></a>1. Opis projekta
 
 Sustav demonstrira obradu višestrukih prekida s različitim prioritetima koristeći:
 
