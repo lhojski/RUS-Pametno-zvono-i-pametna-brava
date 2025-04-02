@@ -3,7 +3,7 @@
 **Sustav za upravljanje višestrukim prekidima s prioritetima na Arduino Mega 2560**
 
 ![Arduino Mega Compatible](https://img.shields.io/badge/Platform-Arduino_Mega_2560-blue)
-![LED Visualization](<https://img.shields.io/badge/Visualization-3_LEDs_(RGB)-yellowgreen>)
+![LED Visualization](<https://img.shields.io/badge/Visualization-5_LEDs_(RGB)-yellowgreen>)
 
 [Prekidi - Zadatak 1](https://wokwi.com/projects/426796676518937601)
 
