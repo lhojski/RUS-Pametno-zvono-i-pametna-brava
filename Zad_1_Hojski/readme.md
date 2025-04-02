@@ -1,4 +1,4 @@
-# 🚦 Arduino Interrupt Priority System
+# 🚦 Sustav za upravljanje prekidima
 
 **Sustav za upravljanje višestrukim prekidima s prioritetima na Arduino Mega 2560**
 
@@ -47,7 +47,7 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 
 ## <a name="slika-spojeva"></a> 3. Slika spojeva
 
-![Wiring Diagram](Prekidi.png)
+![Wiring Diagram](https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_1_Hojski/Prekidi.png)
 
 ## 4. <a name="opis-rjesenja"></a>Opis rješenja
 
@@ -97,7 +97,23 @@ Za najbolje testiranje ovog slučaja, preporučuje se:
 
 - Nakon gašenja crvene lampice, ponovno pritisnuti tipkalo INT0 kako bi se provjerilo da ima prednost pred preostalim aktivnim prekidima.
 
-## 5. <a name="zakljucak"></a>Zakljucak
+### 4.3. Tablica funkcionalnosti
+
+| ID    | Opis funkcionalnosti                                                                                 |
+| ----- | ---------------------------------------------------------------------------------------------------- |
+| FR-1  | Upravljanje LED-icama: Crvena (INT0), Žuta (INT1), Zelena (INT2), Plava (senzor), Bijela (timer).    |
+| FR-2  | Detekcija pritiska na tipkala (INT0, INT1, INT2) i generiranje prekida.                              |
+| FR-3  | Mjerenje udaljenosti pomoću HC-SR04 senzora i generiranje prekida ako je udaljenost manja od 100 cm. |
+| FR-4  | Konfiguracija Timer1 za generiranje prekida svake sekunde (najviši prioritet).                       |
+| FR-5  | Obrada prekida prema prioritetima: Timer1 > INT0 > INT1 > INT2 > senzor udaljenosti.                 |
+| FR-6  | Vizualizacija aktivnih prekida pomoću odgovarajućih LED-ica.                                         |
+| FR-7  | Debounce mehanizam za tipkala kako bi se izbjeglo višestruko okidanje prekida.                       |
+| FR-8  | Serial komunikacija za ispisivanje poruka o aktivnim prekidima.                                      |
+| FR-9  | Automatsko gašenje svih LED-ica prilikom aktivacije prekida višeg prioriteta.                        |
+| FR-10 | Bljeskajuća LED-ica (plava) kao indikacija alarmnog stanja zbog blizine predmeta.                    |
+| FR-11 | Testiranje istovremenog okidanja svih prekida i provjera hijerarhije prioriteta.                     |
+
+## 5. <a name="Zaključak"></a>Zakljucak
 
 Prekidi (interrupti) su ključni mehanizam u embedded sustavima jer omogućuju:
 
