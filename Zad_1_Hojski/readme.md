@@ -48,7 +48,7 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 
 ## <a name="slika-spojeva"></a> 3. Slika spojeva
 
-![Wiring Diagram](https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_1_Hojski/Prekidi.png)
+![Wiring Diagram](https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_1_Hojski/Prekidi.png?)
 
 ## 4. <a name="opis-rjesenja"></a>Opis rješenja
 
