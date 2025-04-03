@@ -33,17 +33,18 @@ Sustav demonstrira obradu višestrukih prekida s različitim prioritetima korist
 
 ## <a name="hardverske-komponente"></a>2. Hardverske komponente
 
-| Komponenta        | Količina | Pin na Arduino Mega |
-| ----------------- | -------- | ------------------- |
-| Arduino Mega 2560 | 1        | -                   |
-| Tipkalo           | 3        | 2, 3, 21            |
-| Crvena LED        | 1        | 13                  |
-| Žuta LED          | 1        | 12                  |
-| Zelena LED        | 1        | 11                  |
-| Plava LED         | 1        | 10                  |
-| Bijela LED        | 1        | 9                   |
-| HC-SR04           | 1        | TRIG: 4, ECHO: 5    |
-| Otpornik 220Ω     | 3        | -                   |
+| Komponenta         | Količina | Pin na Arduino Mega |
+| ------------------ | -------- | ------------------- |
+| Arduino Mega 2560  | 1        | -                   |
+| Tipkalo            | 3        | 2, 3, 21            |
+| Crvena LED         | 1        | 13                  |
+| Žuta LED           | 1        | 12                  |
+| Zelena LED         | 1        | 11                  |
+| Plava LED          | 1        | 10                  |
+| Bijela LED         | 1        | 9                   |
+| HC-SR04            | 1        | TRIG: 4, ECHO: 5    |
+| Otpornik 220Ω      | 3        | -                   |
+| Logički analizator | 1        | 14 - 18             |
 
 ## <a name="slika-spojeva"></a> 3. Slika spojeva
 
@@ -64,6 +65,32 @@ Svaki prekid bi trebao upaliti odgovarajuću LED lampicu kako bi korisnik mogao 
 - Pritiskom na tipkala INT0, INT1 i INT2 trebale bi se redom paliti crvena, žuta i zelena lampica.
 
 - Kada je objekt bliže od 100 cm senzoru, plava lampica se pali kako bi signalizirala da je detekcija aktivirana.
+
+### 4.0. Logički analizator
+
+Logički analizator je spojen na sljedeće pinove:
+
+| Signal        | Arduino Pin | Logički analizator kanal |
+| ------------- | ----------- | ------------------------ |
+| INT0 signal   | 14          | Kanal 0                  |
+| INT1 signal   | 15          | Kanal 1                  |
+| INT2 signal   | 16          | Kanal 2                  |
+| Timer signal  | 17          | Kanal 3                  |
+| Sensor signal | 18          | Kanal 4                  |
+
+**Funkcionalnost logičkog analizatora**:
+
+- Bilježi kratke impulse (oko 10μs) prilikom aktivacije svakog prekida
+- Omogućuje vizualizaciju hijerarhije prioriteta
+- Mjeri vremenske odnose između prekida
+- Detektira bounce tipkala i kašnjenja u obradi
+- Prikazuje redoslijed aktiviranja prekida
+
+**Postavke logičkog analizatora**:
+
+- Uzorkovanje: 10kHz (minimalno)
+- Duljina snimanja: 2-5 sekundi
+- Okidalo: Rising edge na bilo kojem kanalu
 
 ### 4.1. Prekidi izazvani kada se pritisnu sva tipkala istovremeno
 
