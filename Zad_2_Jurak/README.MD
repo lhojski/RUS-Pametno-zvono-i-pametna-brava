@@ -37,10 +37,8 @@ Sustav demonstrira napredne tehnike upravljanja potrošnjom energije kroz cikli�
 
 ---
 
-## 3. Shema spojeva
-https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_2_Jurak/Shema_2.png
+## 3. Spojni detalji
 
-**Spojni detalji**:
 1. **LED krug**:
    - Anoda → Digitalni pin 13
    - Katoda → GND preko 220Ω otpornika
