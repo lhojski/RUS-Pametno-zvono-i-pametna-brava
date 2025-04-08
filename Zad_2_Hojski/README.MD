@@ -73,6 +73,17 @@ Sustav demonstrira korištenje sleep modova za smanjenje potrošnje energije:
 
   - WDT interrupt postavljen da se javi nakon otprilike 8 sekundi koristeći WDTCSR.
 
+### Tablica funkcionalnosti
+
+| ID   | Opis funkcionalnosti                                                                                |
+| ---- | --------------------------------------------------------------------------------------------------- |
+| FR-1 | Upravljanje LED-icom na pinu 13: LED treperi tijekom aktivnog perioda i vizualizira aktivno stanje. |
+| FR-2 | Detekcija pritiska na tipkalo (pin 2 - INT0) i generiranje prekida za buđenje.                      |
+| FR-3 | Konfiguracija Watchdog Timer-a (WDT) za buđenje nakon ~8 sekundi.                                   |
+| FR-4 | Implementacija sleep moda (SLEEP_MODE_PWR_DOWN) za minimalnu potrošnju energije.                    |
+| FR-5 | Obrada prekida: buđenje pomoću tipkala (INT0) ili Watchdog Timer-a (WDT).                           |
+| FR-6 | Automatsko gašenje LED-ice prije ulaska u sleep mode.                                               |
+
 ## <a name="sleep_modovi"></a>5. Sleep modovi mikrokontrolera: Usporedba i primjena
 
 ## Tablica usporedbe sleep modova
