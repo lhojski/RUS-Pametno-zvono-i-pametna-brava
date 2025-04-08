@@ -1,44 +1,81 @@
 #include <avr/sleep.h>
-#include <avr/interrupt.h>
+#include <avr/power.h>
 
-#define LED_PIN 13
-#define BUTTON_PIN 2
+const int ledPin = 13;    // LED spojena na pin 13
+const int buttonPin = 2;  // Tipkalo spojeno na pin 2 (INT0)
 
-volatile bool wakeUp = false;
+volatile bool sleepMode = false;
+volatile bool interrupted = false;
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT);
-  pinMode(BUTTON_PIN, INPUT_PULLUP);
-
-  // External interrupt setup on pin 2 (INT0)
-  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), wakeUpNow, FALLING);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buttonPin, INPUT_PULLUP);
+  Serial.begin(9600);
+  
+  Serial.println("Sustav pokrenut");
+  Serial.println("LED ce treptati 5 sekundi prije ulaska u sleep mode");
 }
 
 void loop() {
-  // Aktivna faza
-  digitalWrite(LED_PIN, HIGH);
-  delay(5000); // Svijetli 5 sekundi
-  digitalWrite(LED_PIN, LOW);
+  if (!sleepMode) {
+    activePhase();    // Aktivni period
+    prepareForSleep(); // Priprema za sleep
+    enterSleep();     // Ulazak u sleep mode
+  }
+}
 
-  // Ulazak u sleep mod
-  enterSleep();
+void activePhase() {
+  Serial.println("Aktivni mod - LED treperi");
+  
+  for (int i = 0; i < 5; i++) {
+    digitalWrite(ledPin, HIGH);
+    delay(500);
+    digitalWrite(ledPin, LOW);
+    delay(500);
+  }
+}
+
+void prepareForSleep() {
+  Serial.println("Priprema za sleep mode...");
+  digitalWrite(ledPin, LOW);
+  delay(100);
+  
+  // Resetiraj zastavicu prekida
+  interrupted = false;
+  
+  // Konfiguriraj prekid
+  attachInterrupt(digitalPinToInterrupt(buttonPin), wakeUp, FALLING);
+  
+  Serial.println("Spreman za sleep mode");
+  Serial.println("Pritisnite tipkalo za buđenje");
+  Serial.println("----------------------------------");
 }
 
 void enterSleep() {
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Najniži sleep mode
+  sleepMode = true;
+  
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
   sleep_enable();
-
-  // Onemogući nepotrebne module (opcionalno)
-
-  cli(); // Isključi prekide na trenutak
-  if (!wakeUp) {
-    sei(); // Ponovno omogući prekide
-    sleep_cpu(); // Uđi u sleep
+  
+  // Isključi nepotrebne module
+  power_adc_disable();
+  power_spi_disable();
+  power_twi_disable();
+  
+  // Čekaj dok se ne dogodi prekid
+  while(!interrupted) {
+    sleep_cpu();  // Ulazak u sleep mode
   }
-  sleep_disable(); // Nakon buđenja
-  wakeUp = false;
+  
+  sleep_disable();
+  power_all_enable();
+  sleepMode = false;
+  
+  Serial.println("Sustav se probudio!");
 }
 
-void wakeUpNow() {
-  wakeUp = true; // Ova funkcija se poziva na interrupt
+void wakeUp() {
+  // Postavi zastavicu za prekid
+  interrupted = true;
+  detachInterrupt(digitalPinToInterrupt(buttonPin));
 }
