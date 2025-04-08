@@ -38,7 +38,7 @@ Sustav demonstrira napredne tehnike upravljanja potrošnjom energije kroz cikli�
 ---
 
 ## 3. Shema spojeva
-![Shema električnih spojeva](https://i.imgur.com/JK7v3YD.png)
+https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_2_Jurak/Shema_2.png
 
 **Spojni detalji**:
 1. **LED krug**:
