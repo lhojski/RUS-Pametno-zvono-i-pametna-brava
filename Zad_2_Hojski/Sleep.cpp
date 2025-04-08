@@ -2,9 +2,8 @@
 #include <avr/wdt.h>
 #include <avr/interrupt.h>
 
-const int ledPin = 13;        // LED na pinu 13
-const int buttonPin = 2;      // Tipkalo na pinu 2 (INT0)
-const int longDelay = 100000; // Very long delay until waking up
+const int ledPin = 13;   // LED na pinu 13
+const int buttonPin = 2; // Tipkalo na pinu 2 (INT0)
 
 volatile bool nothing = true;
 
@@ -18,6 +17,7 @@ void setup()
 
     // Konfiguriraj prekid za buđenje tipkalom (FALLING zbog PULLUP)
     attachInterrupt(digitalPinToInterrupt(buttonPin), wakeUpFromButton, FALLING);
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Najniža potrošnja energije
 
     Serial.begin(9600);
     Serial.println("Inicijalizacija zavrsena");
@@ -43,9 +43,6 @@ void loop()
     wakeUpByButton = false;
     wakeUpByTimer = false;
 
-    // Postavi WDT za ~8 sekundi
-    setupWatchdog();
-
     // Uđi u sleep mode
     enterSleep();
 
@@ -61,15 +58,23 @@ void loop()
 
 void enterSleep()
 {
-    set_sleep_mode(SLEEP_MODE_PWR_DOWN); // Najniža potrošnja energije
-    sleep_enable();
-    sleep_cpu();
-    sei();
+    set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+
+    // Interrupts are not counted as ADXL require
+
+    noInterrupts(); // timed sequence coming up
     nothing = true;
+    // Postavi WDT za ~8 sekundi
+    setupWatchdog();
+    sleep_enable(); // ready to sleep
+    interrupts();   // interrupts are required now
+    sleep_cpu();    // sleep
+
     while (nothing)
     {
-    };
-    sleep_disable();
+    }
+
+    sleep_disable(); // precaution
 }
 
 void setupWatchdog()
@@ -85,6 +90,7 @@ void setupWatchdog()
 }
 
 // WDT interrupt rutina
+
 ISR(WDT_vect)
 {
     nothing = false;
