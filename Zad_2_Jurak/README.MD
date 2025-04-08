@@ -1,163 +1,146 @@
-# 💤 Sustav za upravljanje potrošnjom energije
+# 💤 Sustav za upravljanje potrošnjom energije na Arduino Mega 2560
 
-**Sustav za upravljanje potrošnjom energije na Arduino Mega 2560**
+## 📖 Sadržaj
+1. [Opis zadatka](#1-opis-zadatka)  
+2. [Hardverske komponente](#2-hardverske-komponente)  
+3. [Shema spojeva](#3-shema-spojeva)  
+4. [Princip rada](#4-princip-rada)  
+5. [Sleep modovi mikrokontrolera](#5-sleep-modovi-mikrokontrolera)  
+6. [Zaključak](#6-zaključak)  
 
-![Arduino Mega Compatible](https://img.shields.io/badge/Platform-Arduino_Mega_2560-blue)
-![LED Visualization](<https://img.shields.io/badge/Visualization-1_LEDs_(RGB)-yellowgreen>)
+---
 
-1. [Opis zadatka](#opis-projekta)
-2. [Hardverske komponente](#hardverske-komponente)
-3. [Slika spojeva](#slika-spojeva)
-4. [Opis rješenja](#opis-rjesenja)
-5. [Sleep modovi mikrokontrolera: Usporedba i primjena](#sleep_modovi)
-6. [Zaključak](#zakljucak)
+## 1. Opis zadatka
+Sustav demonstrira napredne tehnike upravljanja potrošnjom energije kroz ciklički radni režim s periodičnim ulaskom u sleep mode. Glavne karakteristike uključuju:
 
-## <a name="opis-zadatka"></a>1. Opis zadatka
+- **Dvofazni radni ciklus**:
+  - Aktivna faza (5s) s LED indikacijom
+  - Sleep faza s minimalnom potrošnjom
+- **Višestruki mehanizmi buđenja**:
+  - Eksterni prekidi (tipkalo)
+  - Watchdog timer (~8s)
+  - Promjena stanja pina
+- **Optimizirana potrošnja**:
+  - Automatsko isključivanje nepotrebnih periferija
+  - Dinamička konfiguracija sleep modova
 
-Sustav demonstrira korištenje sleep modova za smanjenje potrošnje energije:
+---
 
-- LED treperi 5 sekundi u aktivnom modu
-- Prelazak u sleep mode nakon aktivnog perioda
-- Buđenje pomoću:
-  - Eksternog prekida (tipkalo na INT0)
-  - Watchdog timera (~8s)
-- Vizualna indikacija stanja LED diodom
+## 2. Hardverske komponente
 
-**Ključne karakteristike:**
+| Komponenta          | Količina | Pin na Arduino Mega | Funkcija                  |
+|---------------------|----------|---------------------|---------------------------|
+| Arduino Mega 2560   | 1        | -                   | Glavni mikrokontroler     |
+| LED dioda           | 1        | 13                  | Vizualna indikacija stanja|
+| Tipkalo             | 1        | 2 (INT0)            | Eksterni prekid za buđenje|
+| Otpornik 220Ω       | 1        | -                   | Zaštita LED diode         |
 
-- Automatsko gašenje LED u sleep modu
-- Podrška za više sleep modova (Idle, Power-down, Standby)
-- Optimizirana potrošnja energije
+---
 
-## <a name="hardverske-komponente"></a>2. Hardverske komponente
+## 3. Shema spojeva
+![Shema električnih spojeva](https://i.imgur.com/JK7v3YD.png)
 
-| Komponenta        | Količina | Pin na Arduino Mega |
-| ----------------- | -------- | ------------------- |
-| Arduino Mega 2560 | 1        | -                   |
-| LED dioda         | 1        | 13                  |
-| Tipkalo           | 1        | 2 (INT0)            |
-| Otpornik 220Ω     | 1        | -                   |
+**Spojni detalji**:
+1. **LED krug**:
+   - Anoda → Digitalni pin 13
+   - Katoda → GND preko 220Ω otpornika
+2. **Prekidni krug**:
+   - Tipkalo → INT0 (pin 2) i GND
+   - Aktivacija padajućom ivicom
+3. **Dodatni senzori** (opcionalno):
+   - Analogni senzori → A0-A15
+   - Digitalni ulazi → Pinovi 0-53
 
-## <a name="slika-spojeva"></a>3. Slika spojeva
+---
 
-![Wiring Diagram](https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_2_Hojski/Sleep_mode.png?)
+## 4. Princip rada
 
-- LED spojena na pin 13 kroz otpornik 220Ω
-- Tipkalo spojeno na pin 2 i GND (s internim PULLUP)
+### Radni ciklus:
+1. **Aktivna faza** (5 sekundi):
+   - LED periodički treperi
+   - Mikrokontroler obavlja osnovne zadatke
+   - Serijska komunikacija aktivna
 
-## <a name="opis-rjesenja"></a>4. Opis rješenja
+2. **Prijelaz u sleep mode**:
+   - Postupno gašenje periferija
+   - Konfiguracija izvora buđenja
+   - Postavljanje SLEEP_MODE_PWR_DOWN
 
-[Ovdje možete vidjeti simulaciju zadatka rješenu preko platforme wokwi](https://wokwi.com/projects/427675671903754241)
+3. **Sleep faza**:
+   - Potrošnja < 0.5mA
+   - Čuvanje stanja registara
+   - Reagiranje na definirane prekide
 
-- Kôd koristi tri glavna dijela:
+4. **Buđenje sustava**:
+   - Detekcija izvora buđenja
+   - Ponovna inicijalizacija periferija
+   - Nastavak radnog ciklusa
 
-- Aktivni period: LED trepće 5 puta uz ispis poruka u Serial monitor.
+### Mehanizmi buđenja:
+1. **Eksterni prekid** (tipkalo):
+   - Niska latencija (~100μs)
+   - Direktna reakcija na korisnički input
 
-- Priprema za sleep:
+2. **Watchdog timer**:
+   - Periodično buđenje (~8s)
+   - Idealno za autonomne uređaje
 
-  - LED se gasi
+3. **Promjena stanja pina**:
+   - Detekcija senzorskih promjena
+   - Podrška za multipleksirane ulaze
 
-  - Inicijalizira se Watchdog timer na otprilike 8 sekundi
+---
 
-  - Arduino prelazi u SLEEP_MODE_PWR_DOWN
+## 5. Sleep modovi mikrokontrolera
 
-- Buđenje:
+### Usporedba karakteristika:
 
-  - Ako je uzrok buđenja tipkalo, ispisuje se "Probudio me prekid s tipkala!"
+| Karakteristika       | Idle Mode       | Power-down      | Standby         |
+|----------------------|----------------|----------------|----------------|
+| **Potrošnja**        | ~15mA          | ~0.5mA         | ~1.2mA         |
+| **Vrijeme buđenja**  | ~6μs           | ~6ms           | ~6μs           |
+| **Aktivni moduli**   | Periferije     | WDT+INT        | WDT+INT        |
+| **Primjena**         | Komunikacijski | Senzorski      | Bežični        |
 
-  - Ako je uzrok buđenja WDT, ispisuje se "Probudio me Watchdog Timer!"
+### Preporučeni scenariji primjene:
+1. **Power-down mode**:
+   - Senzorske stanice s dugim intervalima mjerenja
+   - Baterijski napajani uređaji s dugim vijekom trajanja
 
-- Prekidi
+2. **Standby mode**:
+   - Uređaji s periodičkom komunikacijom
+   - Sustavi gdje je potrebna ravnoteža između uštede i brzine
 
-  - Tipkalo koristi attachInterrupt za FALLING rub, jer koristimo INPUT_PULLUP.
+3. **Idle mode**:
+   - Aplikacije s kontinuiranim procesiranjem
+   - Uređaji gdje je brzina odgovora kritična
 
-  - WDT interrupt postavljen da se javi nakon otprilike 8 sekundi koristeći WDTCSR.
+---
 
-## <a name="sleep_modovi"></a>5. Sleep modovi mikrokontrolera: Usporedba i primjena
+## 6. Zaključak
 
-## Tablica usporedbe sleep modova
+### Ključne prednosti implementacije:
+- **Energetska efikasnost**:
+  - Smanjenje potrošnje >95% u odnosu na kontinuirani rad
+  - Dinamička adaptacija prema zahtjevima aplikacije
 
-| Sleep Mode     | Potrošnja energije | Što se isključuje?                        | Vrijeme buđenja  | Načini buđenja                      |
-| -------------- | ------------------ | ----------------------------------------- | ---------------- | ----------------------------------- |
-| **Idle**       | Minimalna ušteda   | CPU, Flash memorija, ALU                  | Vrlo brzo (~6µs) | Bilo koji prekid                    |
-| **Power-down** | Maksimalna ušteda  | Gotovo sve (osim WDT i eksternih prekida) | Sporo (~6ms)     | Eksterni prekid, WDT, promjena pina |
-| **Standby**    | Velika ušteda      | Gotovo sve (osim WDT i eksternih prekida) | Brzo (~6µs)      | Eksterni prekid, WDT                |
+- **Operativna fleksibilnost**:
+  - Podrška za više izvora buđenja
+  - Kompatibilnost s različitim vrstama senzora
 
-## Detaljna objašnjenja
+- **Praktična primjenjivost**:
+  - Jednostavna integracija u postojeće projekte
+  - Minimalni hardverski zahtjevi
 
-### 1. **Idle Mode**
+### Potencijalne primjene:
+1. **Pametna poljoprivreda**:
+   - Senzorske stanice za praćenje uvjeta okoline
+   - Sustavi za navodnjavanje na bazi senzora
 
-- **Karakteristike**:
-  - Najmanja ušteda energije od tri moda
-  - Brzo buđenje (~6 mikrosekundi)
-- **Ostaje aktivan**:
-  - Svi periferni moduli
-  - Timeri
-  - Watchdog timer
-  - Eksterni prekidi
-- **Primjena**:
-  - Kratki periodi neaktivnosti
-  - Aplikacije gdje je brzina odgovora kritična
+2. **IoT uređaji**:
+   - Bežični senzorski čvorovi
+   - Pametni uređaji na baterije
 
-### 2. **Power-down Mode**
-
-- **Karakteristike**:
-  - Najveća ušteda energije
-  - Sporo buđenje (~6 milisekundi)
-- **Ostaje aktivan**:
-  - Watchdog timer (ako je omogućen)
-  - Eksterni prekidi (INT0, INT1)
-- **Primjena**:
-  - Dugi periodi neaktivnosti
-  - Aplikacije na bateriju gdje je životni vijek bitan
-
-### 3. **Standby Mode**
-
-- **Karakteristike**:
-  - Slična ušteda energije kao Power-down
-  - Brže buđenje (~6 mikrosekundi)
-- **Ostaje aktivan**:
-  - Watchdog timer
-  - Eksterni prekidi
-- **Primjena**:
-  - Aplikacije koje zahtijevaju ravnotežu između uštede energije i brzine odgovora
-
-## Preporuke za korištenje
-
-1. **Power-down**:
-
-   - Koristite za maksimalnu uštedu energije
-   - Primjer: Senzorske stanice koje mjere svakih sat vremena
-
-2. **Standby**:
-
-   - Koristite kada trebate dobru uštedu uz relativno brzo buđenje
-   - Primjer: Daljinski upravljači
-
-3. **Idle**:
-   - Koristite kada je brzina odgovora važnija od uštede energije
-   - Primjer: Uređaji u kontinuiranoj komunikaciji
-
-## Najefikasniji mod
-
-**Power-down mode** nudi najveću uštedu energije i najbolje je rješenje za aplikacije gdje mikrokontroler većinu vremena provodi u neaktivnom stanju. Međutim, za aplikacije koje zahtijevaju brže buđenje, **Standby mode** predstavlja dobar kompromis.
-
-> **Napomena:** Vrijeme buđenja može varirati ovisno o specifičnom mikrokontroleru i njegovim postavkama.
-
-## <a name="zakljucak"></a>6. Zaključak
-
-Implementacija sleep modova omogućuje:
-
-- Smanjenje potrošnje do 99% u odnosu na aktivni mod
-
-- Fleksibilno buđenje pomoću više izvora
-
-- Jednostavnu integraciju u postojeće projekte
-
-Primjena:
-
-- Baterijski napajani uređaji
-
-- Senzorske stanice
-
-- IoT uređaji s periodičnim radom
+3. **Industrijska automatizacija**:
+   - Udaljeni monitoring opreme
+   - Sustavi za uštedu energije u postrojenjima
