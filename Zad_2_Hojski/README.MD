@@ -40,7 +40,7 @@ Sustav demonstrira korištenje sleep modova za smanjenje potrošnje energije:
 
 ## <a name="slika-spojeva"></a>3. Slika spojeva
 
-![Wiring Diagram](https://github.com/your-repo/blob/main/sleep-mode-wiring.png?)
+![Wiring Diagram](https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava/blob/main/Zad_2_Hojski/Sleep_mode.png?)
 
 - LED spojena na pin 13 kroz otpornik 220Ω
 - Tipkalo spojeno na pin 2 i GND (s internim PULLUP)
