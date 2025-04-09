@@ -2,14 +2,20 @@
 #include <avr/wdt.h>
 #include <avr/interrupt.h>
 
-const int ledPin = 13;   // LED na pinu 13
-const int buttonPin = 2; // Tipkalo na pinu 2 (INT0)
+const int ledPin = 13;   ///< Pin na kojem je spojena LED dioda
+const int buttonPin = 2; ///< Pin na kojem je spojeno tipkalo (INT0)
 
-volatile bool nothing = true;
+volatile bool nothing = true; ///< Zastavica za kontrolu spavanja
 
-volatile bool wakeUpByButton = false;
-volatile bool wakeUpByTimer = false;
+volatile bool wakeUpByButton = false; ///< Zastavica koja označava buđenje tipkalom
+volatile bool wakeUpByTimer = false;  ///< Zastavica koja označava buđenje timerom
 
+/**
+ * @brief Funkcija za inicijalizaciju uređaja
+ *
+ * Postavlja pinove za LED i tipkalo, konfigurira prekid za buđenje
+ * te postavlja sleep mode na najnižu potrošnju energije.
+ */
 void setup()
 {
     pinMode(ledPin, OUTPUT);
@@ -23,6 +29,12 @@ void setup()
     Serial.println("Inicijalizacija zavrsena");
 }
 
+/**
+ * @brief Glavna petlja programa
+ *
+ * Petlja koja periodično treperi LED diodom 5 sekundi,
+ * zatim ulazi u sleep mode i čeka buđenje.
+ */
 void loop()
 {
     // Aktivni period: LED trepti 5 sekundi
@@ -56,6 +68,12 @@ void loop()
     }
 }
 
+/**
+ * @brief Funkcija za ulazak u sleep mode
+ *
+ * Postavlja sleep mode, konfigurira watchdog timer
+ * i stavlja procesor u stanje spavanja.
+ */
 void enterSleep()
 {
     set_sleep_mode(SLEEP_MODE_PWR_DOWN);
@@ -68,15 +86,21 @@ void enterSleep()
     setupWatchdog();
     sleep_enable(); // ready to sleep
     interrupts();   // interrupts are required now
-    sleep_cpu();    // sleep
 
     while (nothing)
     {
+        sleep_cpu(); // sleep
     }
 
     sleep_disable(); // precaution
 }
 
+/**
+ * @brief Funkcija za konfiguraciju watchdog timera
+ *
+ * Postavlja watchdog timer na ~8 sekundi (WDP3 + WDP0)
+ * i omogućuje prekid od strane WDT-a.
+ */
 void setupWatchdog()
 {
     cli();
@@ -89,15 +113,22 @@ void setupWatchdog()
     sei();
 }
 
-// WDT interrupt rutina
-
+/**
+ * @brief Interrupt rutina za watchdog timer
+ *
+ * Postavlja zastavice za buđenje kada WDT istekne.
+ */
 ISR(WDT_vect)
 {
     nothing = false;
     wakeUpByTimer = true;
 }
 
-// Prekidna rutina za buđenje tipkalom
+/**
+ * @brief Prekidna rutina za buđenje tipkalom
+ *
+ * Postavlja zastavice za buđenje kada se pritisne tipkalo.
+ */
 void wakeUpFromButton()
 {
     nothing = false;
