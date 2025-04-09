@@ -1,37 +1,42 @@
 # Pametno zvono i pametna brava
 
-![Project Banner](https://via.placeholder.com/800x300?text=Smart+Doorbell+%26+Lock) _(Zamjeniti slikom projekta)_
+Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. Koristi se Arduino za osnovnu funkcionalnost.
 
-## 📌 Opis projekta
+## **Funkcionalnosti**
 
-Projekt kombinira **pametno zvono** i **pametnu bravu** kako bi pružio moderno rješenje za sigurnost i automatizaciju kućnog ulaza.  
-**Cilj:** Poboljšati korisničko iskustvo, osigurati daljinsku kontrolu i praćenje pristupa.
+### **1. Pametno zvono**
 
-### Ključne značajke:
+| ID       | Funkcionalnost        | Opis                                                            |
+| -------- | --------------------- | --------------------------------------------------------------- |
+| **FR-1** | Detekcija pokreta     | PIR senzor detektira pokret i aktivira LED osvjetljenje gumba.  |
+| **FR-2** | Osvjetljenje gumba    | LED dioda osvijetli gumb nakon detekcije pokreta.               |
+| **FR-3** | Zvuk zvona            | Piezo buzzer reproducira zvuk prilikom pritiska na gumb.        |
+| **FR-4** | Notifikacija vlasniku | Wi-Fi modul šalje obavijest na mobilni uredaj (Blynk/Telegram). |
 
-- 🔑 Daljinsko otključavanje putem aplikacije
-- 📊 Povijest pristupa (log aktivnosti)
+### **2. Pametna brava**
 
----
-
-## 🛠️ Funkcijski zahtjevi
-
-### Pametno zvono
-
-| Funkcija | Opis |
-| -------- | ---- |
-
-### Pametna brava
-
-| Funkcija | Opis |
-| -------- | ---- |
+| ID       | Funkcionalnost                       | Opis                                                                 |
+| -------- | ------------------------------------ | -------------------------------------------------------------------- |
+| **FR-6** | Daljinsko otključavanje              | Vlasnik može otključati bravu putem mobilne aplikacije (Blynk/MQTT). |
+| **FR-7** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
+| **FR-8** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
+| **FR-9** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
 
 ---
 
-## 🔧 Tehnologije
+## 📌**Potrebne komponente**
 
-### Hardver
+| Komponenta            | Količina | Opis                                                           |
+| --------------------- | -------- | -------------------------------------------------------------- |
+| Arduino Mega 2560     | 1        | Glavni mikrokontroler (ESP32 je bolji zbog ugrađenog Wi-Fi-a). |
+| PIR senzor (HC-SR501) | 1        | Detektira pokret i aktivira LED.                               |
+| LED dioda             | 1        | Osvjetljava gumb za zvono.                                     |
+| Tipka                 | 1        | Za aktivaciju zvona.                                           |
+| Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                    |
+| Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej). |
+| ESP32                 | 1        | Za Wi-Fi komunikaciju.                                         |
+| Breadboard + žice     | -        | Za povezivanje komponenti.                                     |
 
-### Softver
+---
 
-- **Firmware:** Arduino IDE (C++)
+**Autori:** Damjan Jurak i Leon Hojski
