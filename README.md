@@ -6,20 +6,20 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 
 ### **1. Pametno zvono**
 
-| ID       | Funkcionalnost        | Opis                                                            |
-| -------- | --------------------- | --------------------------------------------------------------- |
-| **FR-1** | Detekcija pokreta     | PIR senzor detektira pokret i aktivira LED osvjetljenje gumba.  |
-| **FR-2** | Osvjetljenje gumba    | LED dioda osvijetli gumb nakon detekcije pokreta.               |
-| **FR-3** | Zvuk zvona            | Piezo buzzer reproducira zvuk prilikom pritiska na gumb.        |
-| **FR-4** | Notifikacija vlasniku | Wi-Fi modul šalje obavijest na mobilni uredaj (Blynk/Telegram). |
+| ID       | Funkcionalnost     | Opis                                                           |
+| -------- | ------------------ | -------------------------------------------------------------- |
+| **FR-1** | Detekcija pokreta  | PIR senzor detektira pokret i aktivira LED osvjetljenje gumba. |
+| **FR-2** | Osvjetljenje gumba | LED dioda osvijetli gumb nakon detekcije pokreta.              |
+| **FR-3** | Zvuk zvona         | Piezo buzzer reproducira zvuk prilikom pritiska na gumb.       |
 
 ### **2. Pametna brava**
 
 | ID       | Funkcionalnost                       | Opis                                                                 |
 | -------- | ------------------------------------ | -------------------------------------------------------------------- |
-| **FR-5** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
-| **FR-6** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
-| **FR-7** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
+| **FR-4** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
+| **FR-5** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
+| **FR-6** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
+| **FR-7** | Otključavanje pomoću lozinke         | Unosom lozinke pomoću keypada moguće je otključati bravu.            |
 
 ---
 
@@ -33,6 +33,7 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 | Tipka                 | 1        | Za aktivaciju zvona.                                           |
 | Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                    |
 | Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej). |
+| Keypad                | 1        | Služi za upisivanje lozinke prilikom otključavanja brave.      |
 | Breadboard + žice     | -        | Za povezivanje komponenti.                                     |
 
 ---
