@@ -17,10 +17,9 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 
 | ID       | Funkcionalnost                       | Opis                                                                 |
 | -------- | ------------------------------------ | -------------------------------------------------------------------- |
-| **FR-6** | Daljinsko otključavanje              | Vlasnik može otključati bravu putem mobilne aplikacije (Blynk/MQTT). |
-| **FR-7** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
-| **FR-8** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
-| **FR-9** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
+| **FR-5** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
+| **FR-6** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
+| **FR-7** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
 
 ---
 
@@ -34,7 +33,6 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 | Tipka                 | 1        | Za aktivaciju zvona.                                           |
 | Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                    |
 | Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej). |
-| ESP32                 | 1        | Za Wi-Fi komunikaciju.                                         |
 | Breadboard + žice     | -        | Za povezivanje komponenti.                                     |
 
 ---
