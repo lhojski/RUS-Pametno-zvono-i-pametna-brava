@@ -28,13 +28,12 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 
 | Komponenta            | Količina | Opis                                                           |
 | --------------------- | -------- | -------------------------------------------------------------- |
-| Arduino Mega 2560     | 1        | Glavni mikrokontroler (ESP32 je bolji zbog ugrađenog Wi-Fi-a). |
+| ESP32                 | 1        | Glavni mikrokontroler.                                         |
 | PIR senzor (HC-SR501) | 1        | Detektira pokret i aktivira LED.                               |
 | LED dioda             | 1        | Osvjetljava gumb za zvono.                                     |
 | Tipka                 | 1        | Za aktivaciju zvona.                                           |
 | Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                    |
 | Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej). |
-| ESP32                 | 1        | Za Wi-Fi komunikaciju.                                         |
 | Breadboard + žice     | -        | Za povezivanje komponenti.                                     |
 
 ---
