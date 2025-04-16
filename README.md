@@ -1,6 +1,6 @@
 # Pametno zvono i pametna brava
 
-Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. Koristi se Arduino za osnovnu funkcionalnost.
+Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. Koristi se ESP32 za osnovnu funkcionalnost.
 
 ## **Funkcionalnosti**
 
