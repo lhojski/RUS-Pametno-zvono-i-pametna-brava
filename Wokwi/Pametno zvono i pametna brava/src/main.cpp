@@ -158,7 +158,6 @@ void wakeupSequence()
 void beep(int duration)
 {
   digitalWrite(BUZZER_PIN, HIGH);
-  tone(8, 262, 250); // Plays 262Hz tone for 0.250 seconds
   delay(duration);
   digitalWrite(BUZZER_PIN, LOW);
 }
