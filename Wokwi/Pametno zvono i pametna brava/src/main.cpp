@@ -60,11 +60,7 @@ void setup()
   pinMode(RGB_GREEN, OUTPUT);
   pinMode(RGB_BLUE, OUTPUT);
 
-  // Initialize servo
-  ESP32PWM::allocateTimer(0);
-  ESP32PWM::allocateTimer(1);
-  ESP32PWM::allocateTimer(2);
-  ESP32PWM::allocateTimer(3);
+  // Initialize servo --
   servo.setPeriodHertz(50); // standard 50 hz servo
   servo.attach(SERVO_PIN, 500, 2400);
   servo.write(SERVO_CLOSED_ANGLE);
