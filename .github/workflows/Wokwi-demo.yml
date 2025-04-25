@@ -1,4 +1,4 @@
-name: ESP32 CI with PlatformIO Build and Wokwi Simulation
+name: Wokwi demo
 
 on:
   push:
