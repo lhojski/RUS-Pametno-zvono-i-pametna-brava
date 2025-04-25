@@ -16,7 +16,7 @@ jobs:
           
       # Run Wokwi simulation
       - name: Run Wokwi Simulation
-        uses: wokwi/wokwi-ci@v1
+        uses: wokwi/wokwi-ci-action@v1
         with:
           api-key: ${{ secrets.WOKWI_CLI_TOKEN }}
           diagram: Wokwi/Pametno\ zvono\ i\ pametna\ brava/wokwi.toml
