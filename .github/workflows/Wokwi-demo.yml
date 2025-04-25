@@ -14,7 +14,7 @@ jobs:
         with:
           esp_idf_version: v5.3
           target: esp32
-          path: 'Wokwi/Pametno\ zvono\ i\ pametna\ brava/'
+          path: './Wokwi/Pametno\ zvono\ i\ pametna\ brava/'
       - name: Test with Wokwi
         uses: wokwi/wokwi-ci-action@v1
         with:
