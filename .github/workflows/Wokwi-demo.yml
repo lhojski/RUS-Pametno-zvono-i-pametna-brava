@@ -1,32 +1,22 @@
-name: ESP32 CI with Wokwi Simulation
+name: Build and test
 
-on: [push]
+on:
+  workflow_dispatch:
+  push:
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Build the project using existing PlatformIO setup
-      - name: Build with PlatformIO
-        run: |
-          pio run -e esp32doit-devkit-v1
-          
-      # Run Wokwi simulation
-      - name: Run Wokwi Simulation
+      - uses: actions/checkout@v4
+      - name: esp-idf build
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.3
+          target: esp32
+          path: '.'
+      - name: Test with Wokwi
         uses: wokwi/wokwi-ci-action@v1
         with:
-          api-key: ${{ secrets.WOKWI_CLI_TOKEN }}
-          diagram: Wokwi/Pametno\ zvono\ i\ pametna\ brava/wokwi.toml
-          timeout: 120
-          elf: .pio/build/esp32doit-devkit-v1/firmware.elf
-
-      # Upload simulation results
-      - name: Upload simulation results
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: wokwi-simulation-results
-          path: wokwi-results.json
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          expect_text: 'any web server online'
