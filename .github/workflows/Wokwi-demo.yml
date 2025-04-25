@@ -1,0 +1,43 @@
+name: ESP32 CI with PlatformIO Build and Wokwi Simulation
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Setup PlatformIO
+      - name: Setup PlatformIO
+        uses: platformio/platformio-core-action@v1
+        with:
+          platform: espressif32
+          board: esp32doit-devkit-v1
+
+      # Build the project with PlatformIO
+      - name: Build with PlatformIO
+        run: |
+          pio run -e esp32doit-devkit-v1
+
+      # Run Wokwi simulation
+      - name: Run Wokwi Simulation
+        uses: wokwi/wokwi-ci@v1
+        with:
+          api-key: ${{ secrets.WOKWI_CLI_TOKEN }}
+          diagram: Wokwi/Pametno\ zvono\ i\ pametna\ brava/wokwi.toml
+          timeout: 120
+          elf: .pio/build/esp32doit-devkit-v1/firmware.elf
+
+      # Upload simulation results as artifact
+      - name: Upload simulation results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: wokwi-simulation-results
+          path: wokwi-results.json
