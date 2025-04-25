@@ -1,12 +1,6 @@
 name: Doxygen Documentation
 
-on:
-  push:
-    branches:
-      - main  # Trigger workflow on push to the 'main' branch
-  pull_request:
-    branches:
-      - main  # Trigger workflow for pull requests targeting the 'main' branch
+on: [push]
 
 permissions:
   contents: write  # Allow GitHub Actions to push changes to the 'gh-pages' branch
