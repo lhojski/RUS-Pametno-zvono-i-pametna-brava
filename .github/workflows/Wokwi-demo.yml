@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: write # Allow GitHub Actions to push changes to the 'gh-pages' branch
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
