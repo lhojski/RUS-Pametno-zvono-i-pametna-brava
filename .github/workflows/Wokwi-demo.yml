@@ -1,9 +1,6 @@
-name: Wokwi demo
+name: ESP32 CI with PlatformIO Build and Wokwi Simulation
 
 on: [push]
-
-permissions:
-  contents: write # Allow GitHub Actions to push changes to the 'gh-pages' branch
 
 jobs:
   build-and-test:
@@ -12,18 +9,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Setup PlatformIO
-      - name: Setup PlatformIO
-        uses: platformio/platformio-core-action@v1
-        with:
-          platform: espressif32
-          board: esp32doit-devkit-v1
+      # Setup PlatformIO Core
+      - name: Install PlatformIO Core
+        uses: platformio/action-install-platformio@v1
+      
+      # Install required platform
+      - name: Install ESP32 Platform
+        run: |
+          pio platform install espressif32
+          pio lib install "Keypad"
+          pio lib install "ESP32Servo"
 
-      # Build the project with PlatformIO
+      # Build the project
       - name: Build with PlatformIO
         run: |
           pio run -e esp32doit-devkit-v1
-
+          
       # Run Wokwi simulation
       - name: Run Wokwi Simulation
         uses: wokwi/wokwi-ci@v1
@@ -33,7 +34,7 @@ jobs:
           timeout: 120
           elf: .pio/build/esp32doit-devkit-v1/firmware.elf
 
-      # Upload simulation results as artifact
+      # Upload simulation results
       - name: Upload simulation results
         uses: actions/upload-artifact@v3
         if: always()
