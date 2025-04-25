@@ -1,10 +1,6 @@
 name: Wokwi demo
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+on: [push]
 
 permissions:
   contents: write # Allow GitHub Actions to push changes to the 'gh-pages' branch
