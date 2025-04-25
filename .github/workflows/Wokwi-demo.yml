@@ -1,4 +1,4 @@
-name: ESP32 CI with PlatformIO Build and Wokwi Simulation
+name: ESP32 CI with Wokwi Simulation
 
 on: [push]
 
@@ -9,18 +9,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Setup PlatformIO Core
-      - name: Install PlatformIO Core
-        uses: platformio/action-install-platformio@v1
-      
-      # Install required platform
-      - name: Install ESP32 Platform
-        run: |
-          pio platform install espressif32
-          pio lib install "Keypad"
-          pio lib install "ESP32Servo"
-
-      # Build the project
+      # Build the project using existing PlatformIO setup
       - name: Build with PlatformIO
         run: |
           pio run -e esp32doit-devkit-v1
