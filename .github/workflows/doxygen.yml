@@ -1,6 +1,6 @@
 name: Doxygen Documentation
 
-on: [push]
+on: workflow_dispatch
 
 permissions:
   contents: write # Allow GitHub Actions to push changes to the 'gh-pages' branch

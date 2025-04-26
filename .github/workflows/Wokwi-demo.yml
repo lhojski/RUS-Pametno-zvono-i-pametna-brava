@@ -1,6 +1,6 @@
 name: PlatformIO CI with Wokwi
 
-on: [push]
+on: workflow_dispatch
 
 jobs:
   platformio:
@@ -12,14 +12,14 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
+          python-version: "3.10"
 
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
 
       - name: Install Wokwi CLI
         run: curl -L https://wokwi.com/ci/install.sh | sh
-  
+
       - name: Build with PlatformIO
         working-directory: ./Wokwi/Pametno zvono i pametna brava
         run: |
@@ -31,4 +31,4 @@ jobs:
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           path: Wokwi/Pametno zvono i pametna brava # directory with wokwi.toml, relative to repo's root
-          expect_text: 'Measured distance: 245.92 cm' # optional
+          expect_text: "Measured distance: 245.92 cm" # optional
