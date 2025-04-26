@@ -15,5 +15,6 @@ jobs:
 
       - name: Wokwi Simulation
         run: wokwi-cli Wokwi/Pametno zvono i pametna brava --timeout 120
-        env:
-          WOKWI_GITHUB_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
