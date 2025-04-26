@@ -1,11 +1,6 @@
 name: Wokwi CI for Smart Doorbell
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
