@@ -1,31 +1,19 @@
-name: Wokwi CI for Smart Doorbell
+name: PlatformIO CI with Wokwi
 
 on: [push]
 
 jobs:
-  test:
+  platformio:
+    name: Wokwi Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install Wokwi CLI
-        run: |
-          mkdir -p ~/.local/bin
-          curl -L https://wokwi.com/ci/install.sh | sh -s -- -b ~/.local/bin
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
-          echo "PATH after addition: $PATH"
-          which wokwi || ls -la ~/.local/bin
+        run: curl -L https://wokwi.com/ci/install.sh | sh
 
-      - name: Verify installation
-        run: |
-          wokwi --version
-          echo "Current PATH: $PATH"
-
-      - name: Run Wokwi simulation
-        working-directory: ./Wokwi/Pametno zvono i pametna brava
-        run: |
-          wokwi validate
-          wokwi simulate --timeout 120
+      - name: Wokwi Simulation
+        run: wokwi-cli Wokwi/Pametno zvono i pametna brava --timeout 120
         env:
           WOKWI_GITHUB_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
