@@ -5,6 +5,5 @@ var searchData=
   ['lastdetectionstate_2',['lastDetectionState',['../df/d0a/main_8cpp.html#a52db0074a8482a73e54ede31af070bd5',1,'main.cpp']]],
   ['lastdetectiontime_3',['lastDetectionTime',['../df/d0a/main_8cpp.html#a9946b2ebe4d0dbc33c14b5b6cdc069aa',1,'main.cpp']]],
   ['lastnotificationtime_4',['lastNotificationTime',['../df/d0a/main_8cpp.html#afabba11db96b7d4cd26e218516d8db13',1,'main.cpp']]],
-  ['led_5fpin_5',['LED_PIN',['../df/d0a/main_8cpp.html#adae60f691931ebee43e0b1779dbd4219',1,'main.cpp']]],
-  ['loop_6',['loop',['../df/d0a/main_8cpp.html#afe461d27b9c48d5921c00d521181f12f',1,'main.cpp']]]
+  ['led_5fpin_5',['LED_PIN',['../df/d0a/main_8cpp.html#adae60f691931ebee43e0b1779dbd4219',1,'main.cpp']]]
 ];

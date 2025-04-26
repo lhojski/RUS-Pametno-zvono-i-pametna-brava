@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['int0flag_0',['int0Flag',['../d5/dc5/Prekidi_8cpp.html#a034e210594def87b13d83c63d794e622',1,'Prekidi.cpp']]],
-  ['int1flag_1',['int1Flag',['../d5/dc5/Prekidi_8cpp.html#a08d87f332d88fcf279d52dafc619eaaf',1,'Prekidi.cpp']]],
-  ['int2flag_2',['int2Flag',['../d5/dc5/Prekidi_8cpp.html#a998c237052f893033561420141e114ac',1,'Prekidi.cpp']]]
+  ['colpins_0',['colPins',['../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675',1,'main.cpp']]],
+  ['cols_1',['COLS',['../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815',1,'main.cpp']]]
 ];

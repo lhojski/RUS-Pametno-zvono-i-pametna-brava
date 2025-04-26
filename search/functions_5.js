@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triggerdistancealert_0',['triggerDistanceAlert',['../d5/dc5/Prekidi_8cpp.html#ab32cbbcb609a39343585330f9509888b',1,'Prekidi.cpp']]]
+  ['resettolockedstate_0',['resetToLockedState',['../df/d0a/main_8cpp.html#aafd5a113921c5cce9262822e077a5287',1,'main.cpp']]]
 ];

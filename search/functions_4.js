@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['setup_0',['setup',['../d5/dc5/Prekidi_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d',1,'Prekidi.cpp']]]
+  ['measuredistance_0',['measureDistance',['../df/d0a/main_8cpp.html#a24db61917b9da8bb4b87af136cbd345f',1,'main.cpp']]]
 ];

@@ -1,0 +1,1174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="hr">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Labos_1_Hojski: Opis datoteke main.cpp</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Labos_1_Hojski
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="Traži" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="../../search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generirao Doxygen 1.9.8 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('df/d0a/main_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Učitavam...</div>
+<div class="SRStatus" id="Searching">Tražim...</div>
+<div class="SRStatus" id="NoMatches">Nema traženih podataka</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">Definicije</a> &#124;
+<a href="#func-members">Funkcije</a> &#124;
+<a href="#var-members">Varijable</a>  </div>
+  <div class="headertitle"><div class="title">Opis datoteke main.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;Keypad.h&gt;</code><br />
+<code>#include &lt;ESP32Servo.h&gt;</code><br />
+<code>#include &lt;esp_sleep.h&gt;</code><br />
+<code>#include &lt;WiFi.h&gt;</code><br />
+<code>#include &lt;WiFiClient.h&gt;</code><br />
+<code>#include &lt;BlynkSimpleEsp32.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Definicije</h2></td></tr>
+<tr class="memitem:a66e08efe8cf655087a9851d3eb9d20b1" id="r_a66e08efe8cf655087a9851d3eb9d20b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a66e08efe8cf655087a9851d3eb9d20b1">BLYNK_TEMPLATE_ID</a>&#160;&#160;&#160;&quot;TMPL4yAFYgzJz&quot;</td></tr>
+<tr class="separator:a66e08efe8cf655087a9851d3eb9d20b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca20411e41106a98dcb1a47fb3ca418" id="r_a6ca20411e41106a98dcb1a47fb3ca418"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6ca20411e41106a98dcb1a47fb3ca418">BLYNK_TEMPLATE_NAME</a>&#160;&#160;&#160;&quot;RUS Pametno zvono i pametna brava&quot;</td></tr>
+<tr class="separator:a6ca20411e41106a98dcb1a47fb3ca418"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ae78d81234f904244f7b6a9eda31481" id="r_a8ae78d81234f904244f7b6a9eda31481"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a8ae78d81234f904244f7b6a9eda31481">BLYNK_AUTH_TOKEN</a>&#160;&#160;&#160;&quot;tsLSOhZc685__mTKTP0wBSQgw78Ln261&quot;</td></tr>
+<tr class="separator:a8ae78d81234f904244f7b6a9eda31481"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4cb7d696bcf21576be65773d59e78b6" id="r_ab4cb7d696bcf21576be65773d59e78b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ab4cb7d696bcf21576be65773d59e78b6">BLYNK_UNLOCK_PIN</a>&#160;&#160;&#160;V1</td></tr>
+<tr class="separator:ab4cb7d696bcf21576be65773d59e78b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4bc109da877c3eb9b35204d5712ded3" id="r_af4bc109da877c3eb9b35204d5712ded3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af4bc109da877c3eb9b35204d5712ded3">BLYNK_NOTIFICATION_PIN</a>&#160;&#160;&#160;V2</td></tr>
+<tr class="separator:af4bc109da877c3eb9b35204d5712ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcije</h2></td></tr>
+<tr class="memitem:a24db61917b9da8bb4b87af136cbd345f" id="r_a24db61917b9da8bb4b87af136cbd345f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a24db61917b9da8bb4b87af136cbd345f">measureDistance</a> ()</td></tr>
+<tr class="separator:a24db61917b9da8bb4b87af136cbd345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4018b7c00365f5bab82afe573e2406b" id="r_aa4018b7c00365f5bab82afe573e2406b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa4018b7c00365f5bab82afe573e2406b">checkDistance</a> ()</td></tr>
+<tr class="separator:aa4018b7c00365f5bab82afe573e2406b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2da94e03570cd696d5e1ef31169b6f3" id="r_ae2da94e03570cd696d5e1ef31169b6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae2da94e03570cd696d5e1ef31169b6f3">goToSleep</a> ()</td></tr>
+<tr class="separator:ae2da94e03570cd696d5e1ef31169b6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affde06ffe22604462b0228e80986e7d7" id="r_affde06ffe22604462b0228e80986e7d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#affde06ffe22604462b0228e80986e7d7">beep</a> (int duration)</td></tr>
+<tr class="separator:affde06ffe22604462b0228e80986e7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83664c2cf48befa447d9ede04e62b0ef" id="r_a83664c2cf48befa447d9ede04e62b0ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a83664c2cf48befa447d9ede04e62b0ef">setRGBColor</a> (int red, int green, int blue)</td></tr>
+<tr class="separator:a83664c2cf48befa447d9ede04e62b0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef01684d0e8c8e666bffc4475b58a337" id="r_aef01684d0e8c8e666bffc4475b58a337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aef01684d0e8c8e666bffc4475b58a337">unlockDevice</a> ()</td></tr>
+<tr class="separator:aef01684d0e8c8e666bffc4475b58a337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd5a113921c5cce9262822e077a5287" id="r_aafd5a113921c5cce9262822e077a5287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aafd5a113921c5cce9262822e077a5287">resetToLockedState</a> ()</td></tr>
+<tr class="separator:aafd5a113921c5cce9262822e077a5287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af50dac187ec793f0a7efaf4503ffdc69" id="r_af50dac187ec793f0a7efaf4503ffdc69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af50dac187ec793f0a7efaf4503ffdc69">wrongPassword</a> ()</td></tr>
+<tr class="separator:af50dac187ec793f0a7efaf4503ffdc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fcc599f808a2703497dd7bab1fd952e" id="r_a1fcc599f808a2703497dd7bab1fd952e"><td class="memItemLeft" align="right" valign="top">void IRAM_ATTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a1fcc599f808a2703497dd7bab1fd952e">buttonISR</a> ()</td></tr>
+<tr class="separator:a1fcc599f808a2703497dd7bab1fd952e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91cd6e0566e7cca7c278a27a1213f714" id="r_a91cd6e0566e7cca7c278a27a1213f714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a91cd6e0566e7cca7c278a27a1213f714">sendBlynkNotification</a> (const char *message)</td></tr>
+<tr class="separator:a91cd6e0566e7cca7c278a27a1213f714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874fe9a6cce6cc67a989ab9c98b39371" id="r_a874fe9a6cce6cc67a989ab9c98b39371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a874fe9a6cce6cc67a989ab9c98b39371">BLYNK_WRITE</a> (<a class="el" href="../../df/d0a/main_8cpp.html#ab4cb7d696bcf21576be65773d59e78b6">BLYNK_UNLOCK_PIN</a>)</td></tr>
+<tr class="separator:a874fe9a6cce6cc67a989ab9c98b39371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Varijable</h2></td></tr>
+<tr class="memitem:a71730005a705ade1511a11685868e0e1" id="r_a71730005a705ade1511a11685868e0e1"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a71730005a705ade1511a11685868e0e1">auth</a> [] = <a class="el" href="../../df/d0a/main_8cpp.html#a8ae78d81234f904244f7b6a9eda31481">BLYNK_AUTH_TOKEN</a></td></tr>
+<tr class="separator:a71730005a705ade1511a11685868e0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a375b545f86fd7e1d5d44926f28b75800" id="r_a375b545f86fd7e1d5d44926f28b75800"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a375b545f86fd7e1d5d44926f28b75800">ssid</a> [] = &quot;Wokwi-GUEST&quot;</td></tr>
+<tr class="separator:a375b545f86fd7e1d5d44926f28b75800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2356d302e37fcf49be9c6dab314eb2" id="r_a0c2356d302e37fcf49be9c6dab314eb2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a0c2356d302e37fcf49be9c6dab314eb2">pass</a> [] = &quot;&quot;</td></tr>
+<tr class="separator:a0c2356d302e37fcf49be9c6dab314eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774760bc702799fec3ff3d336d30c0e2" id="r_a774760bc702799fec3ff3d336d30c0e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a774760bc702799fec3ff3d336d30c0e2">lastButtonState</a> = HIGH</td></tr>
+<tr class="separator:a774760bc702799fec3ff3d336d30c0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52db0074a8482a73e54ede31af070bd5" id="r_a52db0074a8482a73e54ede31af070bd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a52db0074a8482a73e54ede31af070bd5">lastDetectionState</a> = false</td></tr>
+<tr class="separator:a52db0074a8482a73e54ede31af070bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afabba11db96b7d4cd26e218516d8db13" id="r_afabba11db96b7d4cd26e218516d8db13"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#afabba11db96b7d4cd26e218516d8db13">lastNotificationTime</a> = 0</td></tr>
+<tr class="separator:afabba11db96b7d4cd26e218516d8db13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acabe00831b168a024a662675b5c278c2" id="r_acabe00831b168a024a662675b5c278c2"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#acabe00831b168a024a662675b5c278c2">NOTIFICATION_COOLDOWN</a> = 1000</td></tr>
+<tr class="separator:acabe00831b168a024a662675b5c278c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829655a147df70dd4cc94eae40a2204e" id="r_a829655a147df70dd4cc94eae40a2204e"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a> = 4</td></tr>
+<tr class="separator:a829655a147df70dd4cc94eae40a2204e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd90f1160eaa105bc910d4d7c46b815" id="r_aefd90f1160eaa105bc910d4d7c46b815"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a> = 3</td></tr>
+<tr class="separator:aefd90f1160eaa105bc910d4d7c46b815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856e873a1d14012d57ddb813c4a1e40a" id="r_a856e873a1d14012d57ddb813c4a1e40a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a856e873a1d14012d57ddb813c4a1e40a">keys</a> [<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>][<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>]</td></tr>
+<tr class="separator:a856e873a1d14012d57ddb813c4a1e40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d6753e0ae098b31e2f84d4024e361cf" id="r_a6d6753e0ae098b31e2f84d4024e361cf"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6d6753e0ae098b31e2f84d4024e361cf">rowPins</a> [<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>] = {16, 17, 18, 19}</td></tr>
+<tr class="separator:a6d6753e0ae098b31e2f84d4024e361cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9fece7b062124080e4b2976f9a8b675" id="r_aa9fece7b062124080e4b2976f9a8b675"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675">colPins</a> [<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>] = {21, 22, 23}</td></tr>
+<tr class="separator:aa9fece7b062124080e4b2976f9a8b675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e6c3cc7e8c762ab0ca1fa2296d7bbfe" id="r_a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"><td class="memItemLeft" align="right" valign="top">Keypad&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a0e6c3cc7e8c762ab0ca1fa2296d7bbfe">keypad</a> = Keypad(makeKeymap(<a class="el" href="../../df/d0a/main_8cpp.html#a856e873a1d14012d57ddb813c4a1e40a">keys</a>), <a class="el" href="../../df/d0a/main_8cpp.html#a6d6753e0ae098b31e2f84d4024e361cf">rowPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675">colPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>)</td></tr>
+<tr class="separator:a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b5a6f7373234534f0df37d587c64bda" id="r_a9b5a6f7373234534f0df37d587c64bda"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a9b5a6f7373234534f0df37d587c64bda">PASSWORD</a> = &quot;1234&quot;</td></tr>
+<tr class="separator:a9b5a6f7373234534f0df37d587c64bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6986285946633af897cba3b775c8d4b" id="r_af6986285946633af897cba3b775c8d4b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af6986285946633af897cba3b775c8d4b">inputPassword</a></td></tr>
+<tr class="separator:af6986285946633af897cba3b775c8d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9537a3b91f1ecaadb66e6c05b285ff4" id="r_aa9537a3b91f1ecaadb66e6c05b285ff4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa9537a3b91f1ecaadb66e6c05b285ff4">BUZZER_PIN</a> = 12</td></tr>
+<tr class="separator:aa9537a3b91f1ecaadb66e6c05b285ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae60f691931ebee43e0b1779dbd4219" id="r_adae60f691931ebee43e0b1779dbd4219"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#adae60f691931ebee43e0b1779dbd4219">LED_PIN</a> = 13</td></tr>
+<tr class="separator:adae60f691931ebee43e0b1779dbd4219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93a85a5200e90faaef61f936275f9e39" id="r_a93a85a5200e90faaef61f936275f9e39"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a93a85a5200e90faaef61f936275f9e39">SERVO_PIN</a> = 14</td></tr>
+<tr class="separator:a93a85a5200e90faaef61f936275f9e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4cee39196424c87eb64aac6fa6e08f4" id="r_ae4cee39196424c87eb64aac6fa6e08f4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae4cee39196424c87eb64aac6fa6e08f4">RGB_RED</a> = 25</td></tr>
+<tr class="separator:ae4cee39196424c87eb64aac6fa6e08f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ee69d9267986e4c1ca2406b7e90b9af" id="r_a2ee69d9267986e4c1ca2406b7e90b9af"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a2ee69d9267986e4c1ca2406b7e90b9af">RGB_GREEN</a> = 26</td></tr>
+<tr class="separator:a2ee69d9267986e4c1ca2406b7e90b9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b16b2b9f090f218de033756265ca619" id="r_a4b16b2b9f090f218de033756265ca619"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4b16b2b9f090f218de033756265ca619">RGB_BLUE</a> = 27</td></tr>
+<tr class="separator:a4b16b2b9f090f218de033756265ca619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4468fd3e9632684e6b1e52f47fe7ca27" id="r_a4468fd3e9632684e6b1e52f47fe7ca27"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4468fd3e9632684e6b1e52f47fe7ca27">TRIG_PIN</a> = 32</td></tr>
+<tr class="separator:a4468fd3e9632684e6b1e52f47fe7ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a38f8fe2250c2011a6a8c7d13c66ca7" id="r_a7a38f8fe2250c2011a6a8c7d13c66ca7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a7a38f8fe2250c2011a6a8c7d13c66ca7">ECHO_PIN</a> = 33</td></tr>
+<tr class="separator:a7a38f8fe2250c2011a6a8c7d13c66ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4adb49baac164d761359c1af0d2c2bb2" id="r_a4adb49baac164d761359c1af0d2c2bb2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4adb49baac164d761359c1af0d2c2bb2">BUTTON_PIN</a> = 4</td></tr>
+<tr class="separator:a4adb49baac164d761359c1af0d2c2bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab431c926935fa19c6553feb71d6692a4" id="r_ab431c926935fa19c6553feb71d6692a4"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ab431c926935fa19c6553feb71d6692a4">DETECTION_THRESHOLD</a> = 200.0</td></tr>
+<tr class="separator:ab431c926935fa19c6553feb71d6692a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e82363dc6f37b72d84ba86c014da72" id="r_a22e82363dc6f37b72d84ba86c014da72"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a22e82363dc6f37b72d84ba86c014da72">DETECTION_INTERVAL</a> = 500</td></tr>
+<tr class="separator:a22e82363dc6f37b72d84ba86c014da72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad655baa805c44af471296ec1559f1ebd" id="r_ad655baa805c44af471296ec1559f1ebd"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ad655baa805c44af471296ec1559f1ebd">INACTIVITY_TIMEOUT</a> = 10000</td></tr>
+<tr class="separator:ad655baa805c44af471296ec1559f1ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae615acf78839b742c2058517a0a1229" id="r_aae615acf78839b742c2058517a0a1229"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aae615acf78839b742c2058517a0a1229">BUTTON_LED_DURATION</a> = 2000</td></tr>
+<tr class="separator:aae615acf78839b742c2058517a0a1229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79efceea669fb85a732c30f47cf7e59c" id="r_a79efceea669fb85a732c30f47cf7e59c"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a79efceea669fb85a732c30f47cf7e59c">servo</a></td></tr>
+<tr class="separator:a79efceea669fb85a732c30f47cf7e59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a979d2c526192eec0026ac8de68022" id="r_ad5a979d2c526192eec0026ac8de68022"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ad5a979d2c526192eec0026ac8de68022">SERVO_OPEN_ANGLE</a> = 90</td></tr>
+<tr class="separator:ad5a979d2c526192eec0026ac8de68022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3048283716c6cc4910d3e29656377004" id="r_a3048283716c6cc4910d3e29656377004"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a3048283716c6cc4910d3e29656377004">SERVO_CLOSED_ANGLE</a> = 0</td></tr>
+<tr class="separator:a3048283716c6cc4910d3e29656377004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35c01118e4d6a8974b47065e4359eef0" id="r_a35c01118e4d6a8974b47065e4359eef0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a35c01118e4d6a8974b47065e4359eef0">unlockTime</a> = 0</td></tr>
+<tr class="separator:a35c01118e4d6a8974b47065e4359eef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9946b2ebe4d0dbc33c14b5b6cdc069aa" id="r_a9946b2ebe4d0dbc33c14b5b6cdc069aa"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a9946b2ebe4d0dbc33c14b5b6cdc069aa">lastDetectionTime</a> = 0</td></tr>
+<tr class="separator:a9946b2ebe4d0dbc33c14b5b6cdc069aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f69c5109e8c3076144a0ab061802fb" id="r_a94f69c5109e8c3076144a0ab061802fb"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a94f69c5109e8c3076144a0ab061802fb">lastActivityTime</a> = 0</td></tr>
+<tr class="separator:a94f69c5109e8c3076144a0ab061802fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1d7a2bbe67d2bb9dbba1c5dc183619" id="r_abc1d7a2bbe67d2bb9dbba1c5dc183619"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#abc1d7a2bbe67d2bb9dbba1c5dc183619">buttonPressTime</a> = 0</td></tr>
+<tr class="separator:abc1d7a2bbe67d2bb9dbba1c5dc183619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6982e6ecca72bddbffab1089dab0865b" id="r_a6982e6ecca72bddbffab1089dab0865b"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6982e6ecca72bddbffab1089dab0865b">UNLOCK_DURATION</a> = 10000</td></tr>
+<tr class="separator:a6982e6ecca72bddbffab1089dab0865b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15227187684a81146ea4212b41c44f6d" id="r_a15227187684a81146ea4212b41c44f6d"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a15227187684a81146ea4212b41c44f6d">RED_LED_DURATION</a> = 3000</td></tr>
+<tr class="separator:a15227187684a81146ea4212b41c44f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b2e0e7ad16a98ae9bcea62a8cc736c0" id="r_a5b2e0e7ad16a98ae9bcea62a8cc736c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a5b2e0e7ad16a98ae9bcea62a8cc736c0">deviceUnlocked</a> = false</td></tr>
+<tr class="separator:a5b2e0e7ad16a98ae9bcea62a8cc736c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74a286d31cf561480a05ae3d737c91f" id="r_ae74a286d31cf561480a05ae3d737c91f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae74a286d31cf561480a05ae3d737c91f">inRedState</a> = false</td></tr>
+<tr class="separator:ae74a286d31cf561480a05ae3d737c91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7394a07929c6035425280da7f5400f8a" id="r_a7394a07929c6035425280da7f5400f8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a7394a07929c6035425280da7f5400f8a">objectDetected</a> = false</td></tr>
+<tr class="separator:a7394a07929c6035425280da7f5400f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38fbc9732781a9aeb2a76e6d5ff774d7" id="r_a38fbc9732781a9aeb2a76e6d5ff774d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a38fbc9732781a9aeb2a76e6d5ff774d7">wokeFromSleep</a> = false</td></tr>
+<tr class="separator:a38fbc9732781a9aeb2a76e6d5ff774d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac542c876ea54085aa0173a9cd1e3251c" id="r_ac542c876ea54085aa0173a9cd1e3251c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ac542c876ea54085aa0173a9cd1e3251c">wifiConnected</a> = false</td></tr>
+<tr class="separator:ac542c876ea54085aa0173a9cd1e3251c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94d6fb80ebc962752e092191e00bbfdc" id="r_a94d6fb80ebc962752e092191e00bbfdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a94d6fb80ebc962752e092191e00bbfdc">buttonPressed</a> = false</td></tr>
+<tr class="separator:a94d6fb80ebc962752e092191e00bbfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacija definicija</h2>
+<a id="a8ae78d81234f904244f7b6a9eda31481" name="a8ae78d81234f904244f7b6a9eda31481"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ae78d81234f904244f7b6a9eda31481">&#9670;&#160;</a></span>BLYNK_AUTH_TOKEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLYNK_AUTH_TOKEN&#160;&#160;&#160;&quot;tsLSOhZc685__mTKTP0wBSQgw78Ln261&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4bc109da877c3eb9b35204d5712ded3" name="af4bc109da877c3eb9b35204d5712ded3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4bc109da877c3eb9b35204d5712ded3">&#9670;&#160;</a></span>BLYNK_NOTIFICATION_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLYNK_NOTIFICATION_PIN&#160;&#160;&#160;V2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a66e08efe8cf655087a9851d3eb9d20b1" name="a66e08efe8cf655087a9851d3eb9d20b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66e08efe8cf655087a9851d3eb9d20b1">&#9670;&#160;</a></span>BLYNK_TEMPLATE_ID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLYNK_TEMPLATE_ID&#160;&#160;&#160;&quot;TMPL4yAFYgzJz&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6ca20411e41106a98dcb1a47fb3ca418" name="a6ca20411e41106a98dcb1a47fb3ca418"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca20411e41106a98dcb1a47fb3ca418">&#9670;&#160;</a></span>BLYNK_TEMPLATE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLYNK_TEMPLATE_NAME&#160;&#160;&#160;&quot;RUS Pametno zvono i pametna brava&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4cb7d696bcf21576be65773d59e78b6" name="ab4cb7d696bcf21576be65773d59e78b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4cb7d696bcf21576be65773d59e78b6">&#9670;&#160;</a></span>BLYNK_UNLOCK_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLYNK_UNLOCK_PIN&#160;&#160;&#160;V1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacije funkcija</h2>
+<a id="affde06ffe22604462b0228e80986e7d7" name="affde06ffe22604462b0228e80986e7d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affde06ffe22604462b0228e80986e7d7">&#9670;&#160;</a></span>beep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void beep </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>duration</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a874fe9a6cce6cc67a989ab9c98b39371" name="a874fe9a6cce6cc67a989ab9c98b39371"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a874fe9a6cce6cc67a989ab9c98b39371">&#9670;&#160;</a></span>BLYNK_WRITE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLYNK_WRITE </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/d0a/main_8cpp.html#ab4cb7d696bcf21576be65773d59e78b6">BLYNK_UNLOCK_PIN</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1fcc599f808a2703497dd7bab1fd952e" name="a1fcc599f808a2703497dd7bab1fd952e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fcc599f808a2703497dd7bab1fd952e">&#9670;&#160;</a></span>buttonISR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IRAM_ATTR buttonISR </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa4018b7c00365f5bab82afe573e2406b" name="aa4018b7c00365f5bab82afe573e2406b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4018b7c00365f5bab82afe573e2406b">&#9670;&#160;</a></span>checkDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void checkDistance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae2da94e03570cd696d5e1ef31169b6f3" name="ae2da94e03570cd696d5e1ef31169b6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2da94e03570cd696d5e1ef31169b6f3">&#9670;&#160;</a></span>goToSleep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void goToSleep </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afe461d27b9c48d5921c00d521181f12f" name="afe461d27b9c48d5921c00d521181f12f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe461d27b9c48d5921c00d521181f12f">&#9670;&#160;</a></span>loop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void loop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24db61917b9da8bb4b87af136cbd345f" name="a24db61917b9da8bb4b87af136cbd345f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24db61917b9da8bb4b87af136cbd345f">&#9670;&#160;</a></span>measureDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float measureDistance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafd5a113921c5cce9262822e077a5287" name="aafd5a113921c5cce9262822e077a5287"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafd5a113921c5cce9262822e077a5287">&#9670;&#160;</a></span>resetToLockedState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void resetToLockedState </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91cd6e0566e7cca7c278a27a1213f714" name="a91cd6e0566e7cca7c278a27a1213f714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91cd6e0566e7cca7c278a27a1213f714">&#9670;&#160;</a></span>sendBlynkNotification()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sendBlynkNotification </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83664c2cf48befa447d9ede04e62b0ef" name="a83664c2cf48befa447d9ede04e62b0ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83664c2cf48befa447d9ede04e62b0ef">&#9670;&#160;</a></span>setRGBColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setRGBColor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>red</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>green</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>blue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&#160;</a></span>setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aef01684d0e8c8e666bffc4475b58a337" name="aef01684d0e8c8e666bffc4475b58a337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef01684d0e8c8e666bffc4475b58a337">&#9670;&#160;</a></span>unlockDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unlockDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af50dac187ec793f0a7efaf4503ffdc69" name="af50dac187ec793f0a7efaf4503ffdc69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af50dac187ec793f0a7efaf4503ffdc69">&#9670;&#160;</a></span>wrongPassword()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void wrongPassword </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacija varijable</h2>
+<a id="a71730005a705ade1511a11685868e0e1" name="a71730005a705ade1511a11685868e0e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71730005a705ade1511a11685868e0e1">&#9670;&#160;</a></span>auth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char auth[] = <a class="el" href="../../df/d0a/main_8cpp.html#a8ae78d81234f904244f7b6a9eda31481">BLYNK_AUTH_TOKEN</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae615acf78839b742c2058517a0a1229" name="aae615acf78839b742c2058517a0a1229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae615acf78839b742c2058517a0a1229">&#9670;&#160;</a></span>BUTTON_LED_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long BUTTON_LED_DURATION = 2000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4adb49baac164d761359c1af0d2c2bb2" name="a4adb49baac164d761359c1af0d2c2bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4adb49baac164d761359c1af0d2c2bb2">&#9670;&#160;</a></span>BUTTON_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int BUTTON_PIN = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94d6fb80ebc962752e092191e00bbfdc" name="a94d6fb80ebc962752e092191e00bbfdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94d6fb80ebc962752e092191e00bbfdc">&#9670;&#160;</a></span>buttonPressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool buttonPressed = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc1d7a2bbe67d2bb9dbba1c5dc183619" name="abc1d7a2bbe67d2bb9dbba1c5dc183619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1d7a2bbe67d2bb9dbba1c5dc183619">&#9670;&#160;</a></span>buttonPressTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long buttonPressTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9537a3b91f1ecaadb66e6c05b285ff4" name="aa9537a3b91f1ecaadb66e6c05b285ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9537a3b91f1ecaadb66e6c05b285ff4">&#9670;&#160;</a></span>BUZZER_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int BUZZER_PIN = 12</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa9fece7b062124080e4b2976f9a8b675" name="aa9fece7b062124080e4b2976f9a8b675"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fece7b062124080e4b2976f9a8b675">&#9670;&#160;</a></span>colPins</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte colPins[<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>] = {21, 22, 23}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefd90f1160eaa105bc910d4d7c46b815" name="aefd90f1160eaa105bc910d4d7c46b815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd90f1160eaa105bc910d4d7c46b815">&#9670;&#160;</a></span>COLS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const byte COLS = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e82363dc6f37b72d84ba86c014da72" name="a22e82363dc6f37b72d84ba86c014da72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e82363dc6f37b72d84ba86c014da72">&#9670;&#160;</a></span>DETECTION_INTERVAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long DETECTION_INTERVAL = 500</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab431c926935fa19c6553feb71d6692a4" name="ab431c926935fa19c6553feb71d6692a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab431c926935fa19c6553feb71d6692a4">&#9670;&#160;</a></span>DETECTION_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const float DETECTION_THRESHOLD = 200.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5b2e0e7ad16a98ae9bcea62a8cc736c0" name="a5b2e0e7ad16a98ae9bcea62a8cc736c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b2e0e7ad16a98ae9bcea62a8cc736c0">&#9670;&#160;</a></span>deviceUnlocked</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool deviceUnlocked = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7a38f8fe2250c2011a6a8c7d13c66ca7" name="a7a38f8fe2250c2011a6a8c7d13c66ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a38f8fe2250c2011a6a8c7d13c66ca7">&#9670;&#160;</a></span>ECHO_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int ECHO_PIN = 33</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad655baa805c44af471296ec1559f1ebd" name="ad655baa805c44af471296ec1559f1ebd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad655baa805c44af471296ec1559f1ebd">&#9670;&#160;</a></span>INACTIVITY_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long INACTIVITY_TIMEOUT = 10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6986285946633af897cba3b775c8d4b" name="af6986285946633af897cba3b775c8d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6986285946633af897cba3b775c8d4b">&#9670;&#160;</a></span>inputPassword</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String inputPassword</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae74a286d31cf561480a05ae3d737c91f" name="ae74a286d31cf561480a05ae3d737c91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae74a286d31cf561480a05ae3d737c91f">&#9670;&#160;</a></span>inRedState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool inRedState = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e6c3cc7e8c762ab0ca1fa2296d7bbfe" name="a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e6c3cc7e8c762ab0ca1fa2296d7bbfe">&#9670;&#160;</a></span>keypad</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Keypad keypad = Keypad(makeKeymap(<a class="el" href="../../df/d0a/main_8cpp.html#a856e873a1d14012d57ddb813c4a1e40a">keys</a>), <a class="el" href="../../df/d0a/main_8cpp.html#a6d6753e0ae098b31e2f84d4024e361cf">rowPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675">colPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a856e873a1d14012d57ddb813c4a1e40a" name="a856e873a1d14012d57ddb813c4a1e40a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856e873a1d14012d57ddb813c4a1e40a">&#9670;&#160;</a></span>keys</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char keys[<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>][<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Početna vrijednost:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {<span class="charliteral">&#39;1&#39;</span>, <span class="charliteral">&#39;2&#39;</span>, <span class="charliteral">&#39;3&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;4&#39;</span>, <span class="charliteral">&#39;5&#39;</span>, <span class="charliteral">&#39;6&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>},</div>
+<div class="line">    {<span class="charliteral">&#39;*&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;#&#39;</span>}}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a94f69c5109e8c3076144a0ab061802fb" name="a94f69c5109e8c3076144a0ab061802fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f69c5109e8c3076144a0ab061802fb">&#9670;&#160;</a></span>lastActivityTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lastActivityTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a774760bc702799fec3ff3d336d30c0e2" name="a774760bc702799fec3ff3d336d30c0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774760bc702799fec3ff3d336d30c0e2">&#9670;&#160;</a></span>lastButtonState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lastButtonState = HIGH</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a52db0074a8482a73e54ede31af070bd5" name="a52db0074a8482a73e54ede31af070bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52db0074a8482a73e54ede31af070bd5">&#9670;&#160;</a></span>lastDetectionState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool lastDetectionState = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9946b2ebe4d0dbc33c14b5b6cdc069aa" name="a9946b2ebe4d0dbc33c14b5b6cdc069aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9946b2ebe4d0dbc33c14b5b6cdc069aa">&#9670;&#160;</a></span>lastDetectionTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lastDetectionTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afabba11db96b7d4cd26e218516d8db13" name="afabba11db96b7d4cd26e218516d8db13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afabba11db96b7d4cd26e218516d8db13">&#9670;&#160;</a></span>lastNotificationTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long lastNotificationTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adae60f691931ebee43e0b1779dbd4219" name="adae60f691931ebee43e0b1779dbd4219"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae60f691931ebee43e0b1779dbd4219">&#9670;&#160;</a></span>LED_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int LED_PIN = 13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acabe00831b168a024a662675b5c278c2" name="acabe00831b168a024a662675b5c278c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acabe00831b168a024a662675b5c278c2">&#9670;&#160;</a></span>NOTIFICATION_COOLDOWN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long NOTIFICATION_COOLDOWN = 1000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7394a07929c6035425280da7f5400f8a" name="a7394a07929c6035425280da7f5400f8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7394a07929c6035425280da7f5400f8a">&#9670;&#160;</a></span>objectDetected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool objectDetected = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c2356d302e37fcf49be9c6dab314eb2" name="a0c2356d302e37fcf49be9c6dab314eb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2356d302e37fcf49be9c6dab314eb2">&#9670;&#160;</a></span>pass</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char pass[] = &quot;&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b5a6f7373234534f0df37d587c64bda" name="a9b5a6f7373234534f0df37d587c64bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b5a6f7373234534f0df37d587c64bda">&#9670;&#160;</a></span>PASSWORD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const String PASSWORD = &quot;1234&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15227187684a81146ea4212b41c44f6d" name="a15227187684a81146ea4212b41c44f6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15227187684a81146ea4212b41c44f6d">&#9670;&#160;</a></span>RED_LED_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long RED_LED_DURATION = 3000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4b16b2b9f090f218de033756265ca619" name="a4b16b2b9f090f218de033756265ca619"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b16b2b9f090f218de033756265ca619">&#9670;&#160;</a></span>RGB_BLUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RGB_BLUE = 27</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ee69d9267986e4c1ca2406b7e90b9af" name="a2ee69d9267986e4c1ca2406b7e90b9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ee69d9267986e4c1ca2406b7e90b9af">&#9670;&#160;</a></span>RGB_GREEN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RGB_GREEN = 26</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae4cee39196424c87eb64aac6fa6e08f4" name="ae4cee39196424c87eb64aac6fa6e08f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4cee39196424c87eb64aac6fa6e08f4">&#9670;&#160;</a></span>RGB_RED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int RGB_RED = 25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6d6753e0ae098b31e2f84d4024e361cf" name="a6d6753e0ae098b31e2f84d4024e361cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d6753e0ae098b31e2f84d4024e361cf">&#9670;&#160;</a></span>rowPins</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">byte rowPins[<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>] = {16, 17, 18, 19}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a829655a147df70dd4cc94eae40a2204e" name="a829655a147df70dd4cc94eae40a2204e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a829655a147df70dd4cc94eae40a2204e">&#9670;&#160;</a></span>ROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const byte ROWS = 4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a79efceea669fb85a732c30f47cf7e59c" name="a79efceea669fb85a732c30f47cf7e59c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79efceea669fb85a732c30f47cf7e59c">&#9670;&#160;</a></span>servo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Servo servo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3048283716c6cc4910d3e29656377004" name="a3048283716c6cc4910d3e29656377004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3048283716c6cc4910d3e29656377004">&#9670;&#160;</a></span>SERVO_CLOSED_ANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SERVO_CLOSED_ANGLE = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5a979d2c526192eec0026ac8de68022" name="ad5a979d2c526192eec0026ac8de68022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5a979d2c526192eec0026ac8de68022">&#9670;&#160;</a></span>SERVO_OPEN_ANGLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SERVO_OPEN_ANGLE = 90</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93a85a5200e90faaef61f936275f9e39" name="a93a85a5200e90faaef61f936275f9e39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93a85a5200e90faaef61f936275f9e39">&#9670;&#160;</a></span>SERVO_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int SERVO_PIN = 14</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a375b545f86fd7e1d5d44926f28b75800" name="a375b545f86fd7e1d5d44926f28b75800"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a375b545f86fd7e1d5d44926f28b75800">&#9670;&#160;</a></span>ssid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char ssid[] = &quot;Wokwi-GUEST&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4468fd3e9632684e6b1e52f47fe7ca27" name="a4468fd3e9632684e6b1e52f47fe7ca27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4468fd3e9632684e6b1e52f47fe7ca27">&#9670;&#160;</a></span>TRIG_PIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int TRIG_PIN = 32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6982e6ecca72bddbffab1089dab0865b" name="a6982e6ecca72bddbffab1089dab0865b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6982e6ecca72bddbffab1089dab0865b">&#9670;&#160;</a></span>UNLOCK_DURATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const unsigned long UNLOCK_DURATION = 10000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35c01118e4d6a8974b47065e4359eef0" name="a35c01118e4d6a8974b47065e4359eef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35c01118e4d6a8974b47065e4359eef0">&#9670;&#160;</a></span>unlockTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long unlockTime = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac542c876ea54085aa0173a9cd1e3251c" name="ac542c876ea54085aa0173a9cd1e3251c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac542c876ea54085aa0173a9cd1e3251c">&#9670;&#160;</a></span>wifiConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool wifiConnected = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38fbc9732781a9aeb2a76e6d5ff774d7" name="a38fbc9732781a9aeb2a76e6d5ff774d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38fbc9732781a9aeb2a76e6d5ff774d7">&#9670;&#160;</a></span>wokeFromSleep</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool wokeFromSleep = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../df/d0a/main_8cpp.html">main.cpp</a></li>
+    <li class="footer">Generirao <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
+</body>
+</html>
