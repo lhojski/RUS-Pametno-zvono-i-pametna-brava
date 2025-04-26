@@ -12,21 +12,31 @@ jobs:
 
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: '3.10'
 
       - name: Install PlatformIO Core
         run: pip install --upgrade platformio
-  
-      - name: Build PlatformIO Project
-        run: 
-          cd Wokwi/Pametno zvono i pametna brava
-          pio run
 
       - name: Install Wokwi CLI
         run: curl -L https://wokwi.com/ci/install.sh | sh
+  
+      - name: Build with PlatformIO
+        working-directory: ./Wokwi/Pametno zvono i pametna brava
+        run: |
+          pio run -v
+          ls -la .pio/build/  # Verify build output
 
       - name: Test with Wokwi
         uses: wokwi/wokwi-ci-action@v1
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           path: Wokwi/Pametno zvono i pametna brava # directory with wokwi.toml, relative to repo's root
+      
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: platformio-build
+          path: |
+            Wokwi/Pametno zvono i pametna brava/.pio/**
+            Wokwi/Pametno zvono i pametna brava/wokwi-logs/**
