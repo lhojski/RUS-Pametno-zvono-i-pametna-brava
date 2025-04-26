@@ -3,16 +3,4 @@ version: 1
 author: lhojski
 
 steps:
-  - delay: 5000ms
-  - set-control:
-      part-id: btn1
-      control: pressed
-      value: 1
-  - wait-serial: "Poslana notifikacija: Pritisnuto je zvono!"
-  - delay: 3000ms
-  - set-control:
-      part-id: btn1
-      control: pressed
-      value: 1
-  - delay: 500ms
-  - wait-serial: "Poslana notifikacija: Pritisnuto je zvono!"
+  - wait-serial: "Uspjesno povezano na Blynk"
