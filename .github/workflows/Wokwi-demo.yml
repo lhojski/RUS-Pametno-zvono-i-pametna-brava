@@ -31,12 +31,3 @@ jobs:
         with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
           path: Wokwi/Pametno zvono i pametna brava # directory with wokwi.toml, relative to repo's root
-      
-      - name: Upload build artifacts
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: platformio-build
-          path: |
-            Wokwi/Pametno zvono i pametna brava/.pio/**
-            Wokwi/Pametno zvono i pametna brava/wokwi-logs/**
