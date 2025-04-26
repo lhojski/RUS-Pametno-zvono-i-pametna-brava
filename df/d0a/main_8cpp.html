@@ -102,6 +102,9 @@ $(document).ready(function(){initNavTree('df/d0a/main_8cpp.html','../../'); init
   <div class="headertitle"><div class="title">Opis datoteke main.cpp</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Glavni program za pametno zvono i bravu s ESP32.  
+<a href="#details">Opširnije...</a></p>
 <div class="textblock"><code>#include &lt;Keypad.h&gt;</code><br />
 <code>#include &lt;ESP32Servo.h&gt;</code><br />
 <code>#include &lt;esp_sleep.h&gt;</code><br />
@@ -112,53 +115,80 @@ $(document).ready(function(){initNavTree('df/d0a/main_8cpp.html','../../'); init
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Definicije</h2></td></tr>
 <tr class="memitem:a66e08efe8cf655087a9851d3eb9d20b1" id="r_a66e08efe8cf655087a9851d3eb9d20b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a66e08efe8cf655087a9851d3eb9d20b1">BLYNK_TEMPLATE_ID</a>&#160;&#160;&#160;&quot;TMPL4yAFYgzJz&quot;</td></tr>
+<tr class="memdesc:a66e08efe8cf655087a9851d3eb9d20b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ID Blynk predloška.  <br /></td></tr>
 <tr class="separator:a66e08efe8cf655087a9851d3eb9d20b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ca20411e41106a98dcb1a47fb3ca418" id="r_a6ca20411e41106a98dcb1a47fb3ca418"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6ca20411e41106a98dcb1a47fb3ca418">BLYNK_TEMPLATE_NAME</a>&#160;&#160;&#160;&quot;RUS Pametno zvono i pametna brava&quot;</td></tr>
+<tr class="memdesc:a6ca20411e41106a98dcb1a47fb3ca418"><td class="mdescLeft">&#160;</td><td class="mdescRight">Naziv Blynk projekta.  <br /></td></tr>
 <tr class="separator:a6ca20411e41106a98dcb1a47fb3ca418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ae78d81234f904244f7b6a9eda31481" id="r_a8ae78d81234f904244f7b6a9eda31481"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a8ae78d81234f904244f7b6a9eda31481">BLYNK_AUTH_TOKEN</a>&#160;&#160;&#160;&quot;tsLSOhZc685__mTKTP0wBSQgw78Ln261&quot;</td></tr>
+<tr class="memdesc:a8ae78d81234f904244f7b6a9eda31481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Autentifikacijski token za Blynk.  <br /></td></tr>
 <tr class="separator:a8ae78d81234f904244f7b6a9eda31481"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4cb7d696bcf21576be65773d59e78b6" id="r_ab4cb7d696bcf21576be65773d59e78b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ab4cb7d696bcf21576be65773d59e78b6">BLYNK_UNLOCK_PIN</a>&#160;&#160;&#160;V1</td></tr>
+<tr class="memdesc:ab4cb7d696bcf21576be65773d59e78b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtualni pin za otključavanje.  <br /></td></tr>
 <tr class="separator:ab4cb7d696bcf21576be65773d59e78b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4bc109da877c3eb9b35204d5712ded3" id="r_af4bc109da877c3eb9b35204d5712ded3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af4bc109da877c3eb9b35204d5712ded3">BLYNK_NOTIFICATION_PIN</a>&#160;&#160;&#160;V2</td></tr>
+<tr class="memdesc:af4bc109da877c3eb9b35204d5712ded3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtualni pin za notifikacije.  <br /></td></tr>
 <tr class="separator:af4bc109da877c3eb9b35204d5712ded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Funkcije</h2></td></tr>
 <tr class="memitem:a24db61917b9da8bb4b87af136cbd345f" id="r_a24db61917b9da8bb4b87af136cbd345f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a24db61917b9da8bb4b87af136cbd345f">measureDistance</a> ()</td></tr>
+<tr class="memdesc:a24db61917b9da8bb4b87af136cbd345f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mjerenje udaljenosti pomoću HC-SR04 senzora.  <br /></td></tr>
 <tr class="separator:a24db61917b9da8bb4b87af136cbd345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4018b7c00365f5bab82afe573e2406b" id="r_aa4018b7c00365f5bab82afe573e2406b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa4018b7c00365f5bab82afe573e2406b">checkDistance</a> ()</td></tr>
+<tr class="memdesc:aa4018b7c00365f5bab82afe573e2406b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provjera udaljenosti i detekcija pokreta.  <br /></td></tr>
 <tr class="separator:aa4018b7c00365f5bab82afe573e2406b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2da94e03570cd696d5e1ef31169b6f3" id="r_ae2da94e03570cd696d5e1ef31169b6f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae2da94e03570cd696d5e1ef31169b6f3">goToSleep</a> ()</td></tr>
+<tr class="memdesc:ae2da94e03570cd696d5e1ef31169b6f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prijelaz uređaja u stanje dubokog sna.  <br /></td></tr>
 <tr class="separator:ae2da94e03570cd696d5e1ef31169b6f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:affde06ffe22604462b0228e80986e7d7" id="r_affde06ffe22604462b0228e80986e7d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#affde06ffe22604462b0228e80986e7d7">beep</a> (int duration)</td></tr>
+<tr class="memdesc:affde06ffe22604462b0228e80986e7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generiranje tona na zujalici.  <br /></td></tr>
 <tr class="separator:affde06ffe22604462b0228e80986e7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83664c2cf48befa447d9ede04e62b0ef" id="r_a83664c2cf48befa447d9ede04e62b0ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a83664c2cf48befa447d9ede04e62b0ef">setRGBColor</a> (int red, int green, int blue)</td></tr>
+<tr class="memdesc:a83664c2cf48befa447d9ede04e62b0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Postavljanje boje RGB LED.  <br /></td></tr>
 <tr class="separator:a83664c2cf48befa447d9ede04e62b0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef01684d0e8c8e666bffc4475b58a337" id="r_aef01684d0e8c8e666bffc4475b58a337"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aef01684d0e8c8e666bffc4475b58a337">unlockDevice</a> ()</td></tr>
+<tr class="memdesc:aef01684d0e8c8e666bffc4475b58a337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Otključavanje brave.  <br /></td></tr>
 <tr class="separator:aef01684d0e8c8e666bffc4475b58a337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aafd5a113921c5cce9262822e077a5287" id="r_aafd5a113921c5cce9262822e077a5287"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aafd5a113921c5cce9262822e077a5287">resetToLockedState</a> ()</td></tr>
+<tr class="memdesc:aafd5a113921c5cce9262822e077a5287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zaključavanje brave.  <br /></td></tr>
 <tr class="separator:aafd5a113921c5cce9262822e077a5287"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af50dac187ec793f0a7efaf4503ffdc69" id="r_af50dac187ec793f0a7efaf4503ffdc69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af50dac187ec793f0a7efaf4503ffdc69">wrongPassword</a> ()</td></tr>
+<tr class="memdesc:af50dac187ec793f0a7efaf4503ffdc69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obrada pogrešne lozinke.  <br /></td></tr>
 <tr class="separator:af50dac187ec793f0a7efaf4503ffdc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fcc599f808a2703497dd7bab1fd952e" id="r_a1fcc599f808a2703497dd7bab1fd952e"><td class="memItemLeft" align="right" valign="top">void IRAM_ATTR&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a1fcc599f808a2703497dd7bab1fd952e">buttonISR</a> ()</td></tr>
+<tr class="memdesc:a1fcc599f808a2703497dd7bab1fd952e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt servisna rutina za tipku.  <br /></td></tr>
 <tr class="separator:a1fcc599f808a2703497dd7bab1fd952e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91cd6e0566e7cca7c278a27a1213f714" id="r_a91cd6e0566e7cca7c278a27a1213f714"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a91cd6e0566e7cca7c278a27a1213f714">sendBlynkNotification</a> (const char *message)</td></tr>
+<tr class="memdesc:a91cd6e0566e7cca7c278a27a1213f714"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slanje notifikacije preko Blynka.  <br /></td></tr>
 <tr class="separator:a91cd6e0566e7cca7c278a27a1213f714"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a874fe9a6cce6cc67a989ab9c98b39371" id="r_a874fe9a6cce6cc67a989ab9c98b39371"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a874fe9a6cce6cc67a989ab9c98b39371">BLYNK_WRITE</a> (<a class="el" href="../../df/d0a/main_8cpp.html#ab4cb7d696bcf21576be65773d59e78b6">BLYNK_UNLOCK_PIN</a>)</td></tr>
+<tr class="memdesc:a874fe9a6cce6cc67a989ab9c98b39371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rukovalac za Blynk virtualni pin za otključavanje.  <br /></td></tr>
 <tr class="separator:a874fe9a6cce6cc67a989ab9c98b39371"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d" id="r_a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
+<tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcija za inicijalizaciju sustava.  <br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f" id="r_afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#afe461d27b9c48d5921c00d521181f12f">loop</a> ()</td></tr>
+<tr class="memdesc:afe461d27b9c48d5921c00d521181f12f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Glavna petlja programa.  <br /></td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Varijable</h2></td></tr>
 <tr class="memitem:a71730005a705ade1511a11685868e0e1" id="r_a71730005a705ade1511a11685868e0e1"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a71730005a705ade1511a11685868e0e1">auth</a> [] = <a class="el" href="../../df/d0a/main_8cpp.html#a8ae78d81234f904244f7b6a9eda31481">BLYNK_AUTH_TOKEN</a></td></tr>
+<tr class="memdesc:a71730005a705ade1511a11685868e0e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">&lt; Blynk integracija  <br /></td></tr>
 <tr class="separator:a71730005a705ade1511a11685868e0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a375b545f86fd7e1d5d44926f28b75800" id="r_a375b545f86fd7e1d5d44926f28b75800"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a375b545f86fd7e1d5d44926f28b75800">ssid</a> [] = &quot;Wokwi-GUEST&quot;</td></tr>
+<tr class="memdesc:a375b545f86fd7e1d5d44926f28b75800"><td class="mdescLeft">&#160;</td><td class="mdescRight">SSID WiFi mreže.  <br /></td></tr>
 <tr class="separator:a375b545f86fd7e1d5d44926f28b75800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c2356d302e37fcf49be9c6dab314eb2" id="r_a0c2356d302e37fcf49be9c6dab314eb2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a0c2356d302e37fcf49be9c6dab314eb2">pass</a> [] = &quot;&quot;</td></tr>
+<tr class="memdesc:a0c2356d302e37fcf49be9c6dab314eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lozinka WiFi mreže (prazna za Wokwi)  <br /></td></tr>
 <tr class="separator:a0c2356d302e37fcf49be9c6dab314eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a829655a147df70dd4cc94eae40a2204e" id="r_a829655a147df70dd4cc94eae40a2204e"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a> = 4</td></tr>
+<tr class="memdesc:a829655a147df70dd4cc94eae40a2204e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broj redaka tipkovnice.  <br /></td></tr>
+<tr class="separator:a829655a147df70dd4cc94eae40a2204e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd90f1160eaa105bc910d4d7c46b815" id="r_aefd90f1160eaa105bc910d4d7c46b815"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a> = 3</td></tr>
+<tr class="memdesc:aefd90f1160eaa105bc910d4d7c46b815"><td class="mdescLeft">&#160;</td><td class="mdescRight">Broj stupaca tipkovnice.  <br /></td></tr>
+<tr class="separator:aefd90f1160eaa105bc910d4d7c46b815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a774760bc702799fec3ff3d336d30c0e2" id="r_a774760bc702799fec3ff3d336d30c0e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a774760bc702799fec3ff3d336d30c0e2">lastButtonState</a> = HIGH</td></tr>
 <tr class="separator:a774760bc702799fec3ff3d336d30c0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52db0074a8482a73e54ede31af070bd5" id="r_a52db0074a8482a73e54ede31af070bd5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a52db0074a8482a73e54ede31af070bd5">lastDetectionState</a> = false</td></tr>
@@ -167,80 +197,120 @@ Varijable</h2></td></tr>
 <tr class="separator:afabba11db96b7d4cd26e218516d8db13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acabe00831b168a024a662675b5c278c2" id="r_acabe00831b168a024a662675b5c278c2"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#acabe00831b168a024a662675b5c278c2">NOTIFICATION_COOLDOWN</a> = 1000</td></tr>
 <tr class="separator:acabe00831b168a024a662675b5c278c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829655a147df70dd4cc94eae40a2204e" id="r_a829655a147df70dd4cc94eae40a2204e"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a> = 4</td></tr>
-<tr class="separator:a829655a147df70dd4cc94eae40a2204e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefd90f1160eaa105bc910d4d7c46b815" id="r_aefd90f1160eaa105bc910d4d7c46b815"><td class="memItemLeft" align="right" valign="top">const byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a> = 3</td></tr>
-<tr class="separator:aefd90f1160eaa105bc910d4d7c46b815"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a856e873a1d14012d57ddb813c4a1e40a" id="r_a856e873a1d14012d57ddb813c4a1e40a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a856e873a1d14012d57ddb813c4a1e40a">keys</a> [<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>][<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>]</td></tr>
+<tr class="memdesc:a856e873a1d14012d57ddb813c4a1e40a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raspored tipki na tipkovnici.  <br /></td></tr>
 <tr class="separator:a856e873a1d14012d57ddb813c4a1e40a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d6753e0ae098b31e2f84d4024e361cf" id="r_a6d6753e0ae098b31e2f84d4024e361cf"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6d6753e0ae098b31e2f84d4024e361cf">rowPins</a> [<a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>] = {16, 17, 18, 19}</td></tr>
+<tr class="memdesc:a6d6753e0ae098b31e2f84d4024e361cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pinovi povezani na retke tipkovnice.  <br /></td></tr>
 <tr class="separator:a6d6753e0ae098b31e2f84d4024e361cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9fece7b062124080e4b2976f9a8b675" id="r_aa9fece7b062124080e4b2976f9a8b675"><td class="memItemLeft" align="right" valign="top">byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675">colPins</a> [<a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>] = {21, 22, 23}</td></tr>
+<tr class="memdesc:aa9fece7b062124080e4b2976f9a8b675"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPIO pinovi povezani na stupce tipkovnice.  <br /></td></tr>
 <tr class="separator:aa9fece7b062124080e4b2976f9a8b675"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e6c3cc7e8c762ab0ca1fa2296d7bbfe" id="r_a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"><td class="memItemLeft" align="right" valign="top">Keypad&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a0e6c3cc7e8c762ab0ca1fa2296d7bbfe">keypad</a> = Keypad(makeKeymap(<a class="el" href="../../df/d0a/main_8cpp.html#a856e873a1d14012d57ddb813c4a1e40a">keys</a>), <a class="el" href="../../df/d0a/main_8cpp.html#a6d6753e0ae098b31e2f84d4024e361cf">rowPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aa9fece7b062124080e4b2976f9a8b675">colPins</a>, <a class="el" href="../../df/d0a/main_8cpp.html#a829655a147df70dd4cc94eae40a2204e">ROWS</a>, <a class="el" href="../../df/d0a/main_8cpp.html#aefd90f1160eaa105bc910d4d7c46b815">COLS</a>)</td></tr>
+<tr class="memdesc:a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objekt tipkovnice.  <br /></td></tr>
 <tr class="separator:a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b5a6f7373234534f0df37d587c64bda" id="r_a9b5a6f7373234534f0df37d587c64bda"><td class="memItemLeft" align="right" valign="top">const String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a9b5a6f7373234534f0df37d587c64bda">PASSWORD</a> = &quot;1234&quot;</td></tr>
+<tr class="memdesc:a9b5a6f7373234534f0df37d587c64bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lozinka za otključavanje.  <br /></td></tr>
 <tr class="separator:a9b5a6f7373234534f0df37d587c64bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6986285946633af897cba3b775c8d4b" id="r_af6986285946633af897cba3b775c8d4b"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#af6986285946633af897cba3b775c8d4b">inputPassword</a></td></tr>
+<tr class="memdesc:af6986285946633af897cba3b775c8d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Privremena varijabla za unos lozinke.  <br /></td></tr>
 <tr class="separator:af6986285946633af897cba3b775c8d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9537a3b91f1ecaadb66e6c05b285ff4" id="r_aa9537a3b91f1ecaadb66e6c05b285ff4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aa9537a3b91f1ecaadb66e6c05b285ff4">BUZZER_PIN</a> = 12</td></tr>
+<tr class="memdesc:aa9537a3b91f1ecaadb66e6c05b285ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za piezo zujalicu.  <br /></td></tr>
 <tr class="separator:aa9537a3b91f1ecaadb66e6c05b285ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adae60f691931ebee43e0b1779dbd4219" id="r_adae60f691931ebee43e0b1779dbd4219"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#adae60f691931ebee43e0b1779dbd4219">LED_PIN</a> = 13</td></tr>
+<tr class="memdesc:adae60f691931ebee43e0b1779dbd4219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za status LED.  <br /></td></tr>
 <tr class="separator:adae60f691931ebee43e0b1779dbd4219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a85a5200e90faaef61f936275f9e39" id="r_a93a85a5200e90faaef61f936275f9e39"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a93a85a5200e90faaef61f936275f9e39">SERVO_PIN</a> = 14</td></tr>
+<tr class="memdesc:a93a85a5200e90faaef61f936275f9e39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za servo motor.  <br /></td></tr>
 <tr class="separator:a93a85a5200e90faaef61f936275f9e39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4cee39196424c87eb64aac6fa6e08f4" id="r_ae4cee39196424c87eb64aac6fa6e08f4"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae4cee39196424c87eb64aac6fa6e08f4">RGB_RED</a> = 25</td></tr>
+<tr class="memdesc:ae4cee39196424c87eb64aac6fa6e08f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za crvenu boju RGB LED.  <br /></td></tr>
 <tr class="separator:ae4cee39196424c87eb64aac6fa6e08f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ee69d9267986e4c1ca2406b7e90b9af" id="r_a2ee69d9267986e4c1ca2406b7e90b9af"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a2ee69d9267986e4c1ca2406b7e90b9af">RGB_GREEN</a> = 26</td></tr>
+<tr class="memdesc:a2ee69d9267986e4c1ca2406b7e90b9af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za zelenu boju RGB LED.  <br /></td></tr>
 <tr class="separator:a2ee69d9267986e4c1ca2406b7e90b9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b16b2b9f090f218de033756265ca619" id="r_a4b16b2b9f090f218de033756265ca619"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4b16b2b9f090f218de033756265ca619">RGB_BLUE</a> = 27</td></tr>
+<tr class="memdesc:a4b16b2b9f090f218de033756265ca619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za plavu boju RGB LED.  <br /></td></tr>
 <tr class="separator:a4b16b2b9f090f218de033756265ca619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4468fd3e9632684e6b1e52f47fe7ca27" id="r_a4468fd3e9632684e6b1e52f47fe7ca27"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4468fd3e9632684e6b1e52f47fe7ca27">TRIG_PIN</a> = 32</td></tr>
+<tr class="memdesc:a4468fd3e9632684e6b1e52f47fe7ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trig pin HC-SR04 senzora.  <br /></td></tr>
 <tr class="separator:a4468fd3e9632684e6b1e52f47fe7ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a38f8fe2250c2011a6a8c7d13c66ca7" id="r_a7a38f8fe2250c2011a6a8c7d13c66ca7"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a7a38f8fe2250c2011a6a8c7d13c66ca7">ECHO_PIN</a> = 33</td></tr>
+<tr class="memdesc:a7a38f8fe2250c2011a6a8c7d13c66ca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Echo pin HC-SR04 senzora.  <br /></td></tr>
 <tr class="separator:a7a38f8fe2250c2011a6a8c7d13c66ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4adb49baac164d761359c1af0d2c2bb2" id="r_a4adb49baac164d761359c1af0d2c2bb2"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a4adb49baac164d761359c1af0d2c2bb2">BUTTON_PIN</a> = 4</td></tr>
+<tr class="memdesc:a4adb49baac164d761359c1af0d2c2bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pin za tipku zvona.  <br /></td></tr>
 <tr class="separator:a4adb49baac164d761359c1af0d2c2bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab431c926935fa19c6553feb71d6692a4" id="r_ab431c926935fa19c6553feb71d6692a4"><td class="memItemLeft" align="right" valign="top">const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ab431c926935fa19c6553feb71d6692a4">DETECTION_THRESHOLD</a> = 200.0</td></tr>
+<tr class="memdesc:ab431c926935fa19c6553feb71d6692a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prag detekcije u cm.  <br /></td></tr>
 <tr class="separator:ab431c926935fa19c6553feb71d6692a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22e82363dc6f37b72d84ba86c014da72" id="r_a22e82363dc6f37b72d84ba86c014da72"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a22e82363dc6f37b72d84ba86c014da72">DETECTION_INTERVAL</a> = 500</td></tr>
+<tr class="memdesc:a22e82363dc6f37b72d84ba86c014da72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interval provjere senzora (ms)  <br /></td></tr>
 <tr class="separator:a22e82363dc6f37b72d84ba86c014da72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad655baa805c44af471296ec1559f1ebd" id="r_ad655baa805c44af471296ec1559f1ebd"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ad655baa805c44af471296ec1559f1ebd">INACTIVITY_TIMEOUT</a> = 10000</td></tr>
+<tr class="memdesc:ad655baa805c44af471296ec1559f1ebd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrijeme neaktivnosti prije spavanja (ms)  <br /></td></tr>
 <tr class="separator:ad655baa805c44af471296ec1559f1ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae615acf78839b742c2058517a0a1229" id="r_aae615acf78839b742c2058517a0a1229"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#aae615acf78839b742c2058517a0a1229">BUTTON_LED_DURATION</a> = 2000</td></tr>
+<tr class="memdesc:aae615acf78839b742c2058517a0a1229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trajanje LED nakon pritiska tipke (ms)  <br /></td></tr>
 <tr class="separator:aae615acf78839b742c2058517a0a1229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79efceea669fb85a732c30f47cf7e59c" id="r_a79efceea669fb85a732c30f47cf7e59c"><td class="memItemLeft" align="right" valign="top">Servo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a79efceea669fb85a732c30f47cf7e59c">servo</a></td></tr>
+<tr class="memdesc:a79efceea669fb85a732c30f47cf7e59c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Objekt za upravljanje servo motorom.  <br /></td></tr>
 <tr class="separator:a79efceea669fb85a732c30f47cf7e59c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5a979d2c526192eec0026ac8de68022" id="r_ad5a979d2c526192eec0026ac8de68022"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ad5a979d2c526192eec0026ac8de68022">SERVO_OPEN_ANGLE</a> = 90</td></tr>
+<tr class="memdesc:ad5a979d2c526192eec0026ac8de68022"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kut otvorene brave.  <br /></td></tr>
 <tr class="separator:ad5a979d2c526192eec0026ac8de68022"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3048283716c6cc4910d3e29656377004" id="r_a3048283716c6cc4910d3e29656377004"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a3048283716c6cc4910d3e29656377004">SERVO_CLOSED_ANGLE</a> = 0</td></tr>
+<tr class="memdesc:a3048283716c6cc4910d3e29656377004"><td class="mdescLeft">&#160;</td><td class="mdescRight">Kut zatvorene brave.  <br /></td></tr>
 <tr class="separator:a3048283716c6cc4910d3e29656377004"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35c01118e4d6a8974b47065e4359eef0" id="r_a35c01118e4d6a8974b47065e4359eef0"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a35c01118e4d6a8974b47065e4359eef0">unlockTime</a> = 0</td></tr>
+<tr class="memdesc:a35c01118e4d6a8974b47065e4359eef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrijeme zadnjeg otključavanja.  <br /></td></tr>
 <tr class="separator:a35c01118e4d6a8974b47065e4359eef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9946b2ebe4d0dbc33c14b5b6cdc069aa" id="r_a9946b2ebe4d0dbc33c14b5b6cdc069aa"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a9946b2ebe4d0dbc33c14b5b6cdc069aa">lastDetectionTime</a> = 0</td></tr>
+<tr class="memdesc:a9946b2ebe4d0dbc33c14b5b6cdc069aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrijeme zadnje detekcije pokreta.  <br /></td></tr>
 <tr class="separator:a9946b2ebe4d0dbc33c14b5b6cdc069aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94f69c5109e8c3076144a0ab061802fb" id="r_a94f69c5109e8c3076144a0ab061802fb"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a94f69c5109e8c3076144a0ab061802fb">lastActivityTime</a> = 0</td></tr>
+<tr class="memdesc:a94f69c5109e8c3076144a0ab061802fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrijeme zadnje aktivnosti.  <br /></td></tr>
 <tr class="separator:a94f69c5109e8c3076144a0ab061802fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc1d7a2bbe67d2bb9dbba1c5dc183619" id="r_abc1d7a2bbe67d2bb9dbba1c5dc183619"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#abc1d7a2bbe67d2bb9dbba1c5dc183619">buttonPressTime</a> = 0</td></tr>
+<tr class="memdesc:abc1d7a2bbe67d2bb9dbba1c5dc183619"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vrijeme zadnjeg pritiska tipke.  <br /></td></tr>
 <tr class="separator:abc1d7a2bbe67d2bb9dbba1c5dc183619"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6982e6ecca72bddbffab1089dab0865b" id="r_a6982e6ecca72bddbffab1089dab0865b"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a6982e6ecca72bddbffab1089dab0865b">UNLOCK_DURATION</a> = 10000</td></tr>
+<tr class="memdesc:a6982e6ecca72bddbffab1089dab0865b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trajanje otključanog stanja (ms)  <br /></td></tr>
 <tr class="separator:a6982e6ecca72bddbffab1089dab0865b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15227187684a81146ea4212b41c44f6d" id="r_a15227187684a81146ea4212b41c44f6d"><td class="memItemLeft" align="right" valign="top">const unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a15227187684a81146ea4212b41c44f6d">RED_LED_DURATION</a> = 3000</td></tr>
+<tr class="memdesc:a15227187684a81146ea4212b41c44f6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trajanje crvene LED nakon zaključavanja (ms)  <br /></td></tr>
 <tr class="separator:a15227187684a81146ea4212b41c44f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b2e0e7ad16a98ae9bcea62a8cc736c0" id="r_a5b2e0e7ad16a98ae9bcea62a8cc736c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a5b2e0e7ad16a98ae9bcea62a8cc736c0">deviceUnlocked</a> = false</td></tr>
+<tr class="memdesc:a5b2e0e7ad16a98ae9bcea62a8cc736c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stanje brave (otključano/zaključano)  <br /></td></tr>
 <tr class="separator:a5b2e0e7ad16a98ae9bcea62a8cc736c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae74a286d31cf561480a05ae3d737c91f" id="r_ae74a286d31cf561480a05ae3d737c91f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ae74a286d31cf561480a05ae3d737c91f">inRedState</a> = false</td></tr>
+<tr class="memdesc:ae74a286d31cf561480a05ae3d737c91f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indikacija crvene LED.  <br /></td></tr>
 <tr class="separator:ae74a286d31cf561480a05ae3d737c91f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7394a07929c6035425280da7f5400f8a" id="r_a7394a07929c6035425280da7f5400f8a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a7394a07929c6035425280da7f5400f8a">objectDetected</a> = false</td></tr>
+<tr class="memdesc:a7394a07929c6035425280da7f5400f8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detekcija objekta.  <br /></td></tr>
 <tr class="separator:a7394a07929c6035425280da7f5400f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38fbc9732781a9aeb2a76e6d5ff774d7" id="r_a38fbc9732781a9aeb2a76e6d5ff774d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a38fbc9732781a9aeb2a76e6d5ff774d7">wokeFromSleep</a> = false</td></tr>
+<tr class="memdesc:a38fbc9732781a9aeb2a76e6d5ff774d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stanje buđenja iz spavanja.  <br /></td></tr>
 <tr class="separator:a38fbc9732781a9aeb2a76e6d5ff774d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac542c876ea54085aa0173a9cd1e3251c" id="r_ac542c876ea54085aa0173a9cd1e3251c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#ac542c876ea54085aa0173a9cd1e3251c">wifiConnected</a> = false</td></tr>
+<tr class="memdesc:ac542c876ea54085aa0173a9cd1e3251c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Status WiFi veze.  <br /></td></tr>
 <tr class="separator:ac542c876ea54085aa0173a9cd1e3251c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94d6fb80ebc962752e092191e00bbfdc" id="r_a94d6fb80ebc962752e092191e00bbfdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d0a/main_8cpp.html#a94d6fb80ebc962752e092191e00bbfdc">buttonPressed</a> = false</td></tr>
+<tr class="memdesc:a94d6fb80ebc962752e092191e00bbfdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stanje tipke.  <br /></td></tr>
 <tr class="separator:a94d6fb80ebc962752e092191e00bbfdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Dokumentacija definicija</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detaljno objašnjenje</h2>
+<div class="textblock"><p>Glavni program za pametno zvono i bravu s ESP32. </p>
+<p>Ovaj program implementira sustav pametnog zvona i brave koji uključuje:</p><ul>
+<li>Detekciju pokreta pomoću HC-SR04 senzora</li>
+<li>Upravljanje bravom pomoću servo motora</li>
+<li>Interakciju preko tipkovnice za unos lozinke</li>
+<li>Blynk integraciju za daljinsko upravljanje</li>
+<li>Notifikacijski sustav</li>
+<li>Štednju energije kroz duboki san </li>
+</ul>
+</div><h2 class="groupheader">Dokumentacija definicija</h2>
 <a id="a8ae78d81234f904244f7b6a9eda31481" name="a8ae78d81234f904244f7b6a9eda31481"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ae78d81234f904244f7b6a9eda31481">&#9670;&#160;</a></span>BLYNK_AUTH_TOKEN</h2>
 
@@ -252,6 +322,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Autentifikacijski token za Blynk. </p>
 
 </div>
 </div>
@@ -267,6 +339,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Virtualni pin za notifikacije. </p>
+
 </div>
 </div>
 <a id="a66e08efe8cf655087a9851d3eb9d20b1" name="a66e08efe8cf655087a9851d3eb9d20b1"></a>
@@ -280,6 +354,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ID Blynk predloška. </p>
 
 </div>
 </div>
@@ -295,6 +371,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Naziv Blynk projekta. </p>
+
 </div>
 </div>
 <a id="ab4cb7d696bcf21576be65773d59e78b6" name="ab4cb7d696bcf21576be65773d59e78b6"></a>
@@ -308,6 +386,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Virtualni pin za otključavanje. </p>
 
 </div>
 </div>
@@ -328,6 +408,14 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Generiranje tona na zujalici. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration</td><td>Trajanje tona u milisekundama </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a874fe9a6cce6cc67a989ab9c98b39371" name="a874fe9a6cce6cc67a989ab9c98b39371"></a>
@@ -346,6 +434,14 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Rukovalac za Blynk virtualni pin za otključavanje. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Vrijednost poslana s Blynka </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a1fcc599f808a2703497dd7bab1fd952e" name="a1fcc599f808a2703497dd7bab1fd952e"></a>
@@ -362,6 +458,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Interrupt servisna rutina za tipku. </p>
 
 </div>
 </div>
@@ -380,6 +478,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Provjera udaljenosti i detekcija pokreta. </p>
+
 </div>
 </div>
 <a id="ae2da94e03570cd696d5e1ef31169b6f3" name="ae2da94e03570cd696d5e1ef31169b6f3"></a>
@@ -396,6 +496,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prijelaz uređaja u stanje dubokog sna. </p>
 
 </div>
 </div>
@@ -414,6 +516,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Glavna petlja programa. </p>
+
 </div>
 </div>
 <a id="a24db61917b9da8bb4b87af136cbd345f" name="a24db61917b9da8bb4b87af136cbd345f"></a>
@@ -430,6 +534,9 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Mjerenje udaljenosti pomoću HC-SR04 senzora. </p>
+<dl class="section return"><dt>Povratne vrijednosti</dt><dd>Udaljenost u centimetrima </dd></dl>
 
 </div>
 </div>
@@ -448,6 +555,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Zaključavanje brave. </p>
+
 </div>
 </div>
 <a id="a91cd6e0566e7cca7c278a27a1213f714" name="a91cd6e0566e7cca7c278a27a1213f714"></a>
@@ -465,6 +574,14 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Slanje notifikacije preko Blynka. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Tekst poruke za slanje </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -500,6 +617,16 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Postavljanje boje RGB LED. </p>
+<dl class="params"><dt>Parametri</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">red</td><td>Intenzitet crvene boje (0-255) </td></tr>
+    <tr><td class="paramname">green</td><td>Intenzitet zelene boje (0-255) </td></tr>
+    <tr><td class="paramname">blue</td><td>Intenzitet plave boje (0-255) </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a4fc01d736fe50cf5b977f755b675f11d" name="a4fc01d736fe50cf5b977f755b675f11d"></a>
@@ -516,6 +643,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funkcija za inicijalizaciju sustava. </p>
 
 </div>
 </div>
@@ -534,6 +663,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Otključavanje brave. </p>
+
 </div>
 </div>
 <a id="af50dac187ec793f0a7efaf4503ffdc69" name="af50dac187ec793f0a7efaf4503ffdc69"></a>
@@ -551,6 +682,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Obrada pogrešne lozinke. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Dokumentacija varijable</h2>
@@ -566,6 +699,9 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>&lt; Blynk integracija </p>
+<p>&lt; Biblioteka za upravljanje tipkovnicom &lt; Biblioteka za servo motor &lt; Funkcije za upravljanje snom ESP32 &lt; WiFi funkcionalnosti &lt; WiFi klijent Autentifikacijski token za Blynk </p>
+
 </div>
 </div>
 <a id="aae615acf78839b742c2058517a0a1229" name="aae615acf78839b742c2058517a0a1229"></a>
@@ -579,6 +715,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Trajanje LED nakon pritiska tipke (ms) </p>
 
 </div>
 </div>
@@ -594,6 +732,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pin za tipku zvona. </p>
+
 </div>
 </div>
 <a id="a94d6fb80ebc962752e092191e00bbfdc" name="a94d6fb80ebc962752e092191e00bbfdc"></a>
@@ -607,6 +747,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stanje tipke. </p>
 
 </div>
 </div>
@@ -622,6 +764,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Vrijeme zadnjeg pritiska tipke. </p>
+
 </div>
 </div>
 <a id="aa9537a3b91f1ecaadb66e6c05b285ff4" name="aa9537a3b91f1ecaadb66e6c05b285ff4"></a>
@@ -635,6 +779,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pin za piezo zujalicu. </p>
 
 </div>
 </div>
@@ -650,6 +796,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>GPIO pinovi povezani na stupce tipkovnice. </p>
+
 </div>
 </div>
 <a id="aefd90f1160eaa105bc910d4d7c46b815" name="aefd90f1160eaa105bc910d4d7c46b815"></a>
@@ -663,6 +811,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Broj stupaca tipkovnice. </p>
 
 </div>
 </div>
@@ -678,6 +828,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Interval provjere senzora (ms) </p>
+
 </div>
 </div>
 <a id="ab431c926935fa19c6553feb71d6692a4" name="ab431c926935fa19c6553feb71d6692a4"></a>
@@ -691,6 +843,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prag detekcije u cm. </p>
 
 </div>
 </div>
@@ -706,6 +860,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Stanje brave (otključano/zaključano) </p>
+
 </div>
 </div>
 <a id="a7a38f8fe2250c2011a6a8c7d13c66ca7" name="a7a38f8fe2250c2011a6a8c7d13c66ca7"></a>
@@ -719,6 +875,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Echo pin HC-SR04 senzora. </p>
 
 </div>
 </div>
@@ -734,6 +892,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Vrijeme neaktivnosti prije spavanja (ms) </p>
+
 </div>
 </div>
 <a id="af6986285946633af897cba3b775c8d4b" name="af6986285946633af897cba3b775c8d4b"></a>
@@ -747,6 +907,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Privremena varijabla za unos lozinke. </p>
 
 </div>
 </div>
@@ -762,6 +924,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Indikacija crvene LED. </p>
+
 </div>
 </div>
 <a id="a0e6c3cc7e8c762ab0ca1fa2296d7bbfe" name="a0e6c3cc7e8c762ab0ca1fa2296d7bbfe"></a>
@@ -775,6 +939,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Objekt tipkovnice. </p>
 
 </div>
 </div>
@@ -795,6 +961,8 @@ Varijable</h2></td></tr>
 <div class="line">    {<span class="charliteral">&#39;7&#39;</span>, <span class="charliteral">&#39;8&#39;</span>, <span class="charliteral">&#39;9&#39;</span>},</div>
 <div class="line">    {<span class="charliteral">&#39;*&#39;</span>, <span class="charliteral">&#39;0&#39;</span>, <span class="charliteral">&#39;#&#39;</span>}}</div>
 </div><!-- fragment -->
+<p>Raspored tipki na tipkovnici. </p>
+
 </div>
 </div>
 <a id="a94f69c5109e8c3076144a0ab061802fb" name="a94f69c5109e8c3076144a0ab061802fb"></a>
@@ -808,6 +976,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Vrijeme zadnje aktivnosti. </p>
 
 </div>
 </div>
@@ -851,6 +1021,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Vrijeme zadnje detekcije pokreta. </p>
+
 </div>
 </div>
 <a id="afabba11db96b7d4cd26e218516d8db13" name="afabba11db96b7d4cd26e218516d8db13"></a>
@@ -878,6 +1050,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pin za status LED. </p>
 
 </div>
 </div>
@@ -907,6 +1081,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Detekcija objekta. </p>
+
 </div>
 </div>
 <a id="a0c2356d302e37fcf49be9c6dab314eb2" name="a0c2356d302e37fcf49be9c6dab314eb2"></a>
@@ -920,6 +1096,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lozinka WiFi mreže (prazna za Wokwi) </p>
 
 </div>
 </div>
@@ -935,6 +1113,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Lozinka za otključavanje. </p>
+
 </div>
 </div>
 <a id="a15227187684a81146ea4212b41c44f6d" name="a15227187684a81146ea4212b41c44f6d"></a>
@@ -948,6 +1128,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Trajanje crvene LED nakon zaključavanja (ms) </p>
 
 </div>
 </div>
@@ -963,6 +1145,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pin za plavu boju RGB LED. </p>
+
 </div>
 </div>
 <a id="a2ee69d9267986e4c1ca2406b7e90b9af" name="a2ee69d9267986e4c1ca2406b7e90b9af"></a>
@@ -976,6 +1160,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Pin za zelenu boju RGB LED. </p>
 
 </div>
 </div>
@@ -991,6 +1177,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pin za crvenu boju RGB LED. </p>
+
 </div>
 </div>
 <a id="a6d6753e0ae098b31e2f84d4024e361cf" name="a6d6753e0ae098b31e2f84d4024e361cf"></a>
@@ -1004,6 +1192,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>GPIO pinovi povezani na retke tipkovnice. </p>
 
 </div>
 </div>
@@ -1019,6 +1209,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Broj redaka tipkovnice. </p>
+
 </div>
 </div>
 <a id="a79efceea669fb85a732c30f47cf7e59c" name="a79efceea669fb85a732c30f47cf7e59c"></a>
@@ -1032,6 +1224,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Objekt za upravljanje servo motorom. </p>
 
 </div>
 </div>
@@ -1047,6 +1241,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Kut zatvorene brave. </p>
+
 </div>
 </div>
 <a id="ad5a979d2c526192eec0026ac8de68022" name="ad5a979d2c526192eec0026ac8de68022"></a>
@@ -1060,6 +1256,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Kut otvorene brave. </p>
 
 </div>
 </div>
@@ -1075,6 +1273,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pin za servo motor. </p>
+
 </div>
 </div>
 <a id="a375b545f86fd7e1d5d44926f28b75800" name="a375b545f86fd7e1d5d44926f28b75800"></a>
@@ -1088,6 +1288,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>SSID WiFi mreže. </p>
 
 </div>
 </div>
@@ -1103,6 +1305,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Trig pin HC-SR04 senzora. </p>
+
 </div>
 </div>
 <a id="a6982e6ecca72bddbffab1089dab0865b" name="a6982e6ecca72bddbffab1089dab0865b"></a>
@@ -1116,6 +1320,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Trajanje otključanog stanja (ms) </p>
 
 </div>
 </div>
@@ -1131,6 +1337,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Vrijeme zadnjeg otključavanja. </p>
+
 </div>
 </div>
 <a id="ac542c876ea54085aa0173a9cd1e3251c" name="ac542c876ea54085aa0173a9cd1e3251c"></a>
@@ -1145,6 +1353,8 @@ Varijable</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Status WiFi veze. </p>
+
 </div>
 </div>
 <a id="a38fbc9732781a9aeb2a76e6d5ff774d7" name="a38fbc9732781a9aeb2a76e6d5ff774d7"></a>
@@ -1158,6 +1368,8 @@ Varijable</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Stanje buđenja iz spavanja. </p>
 
 </div>
 </div>
