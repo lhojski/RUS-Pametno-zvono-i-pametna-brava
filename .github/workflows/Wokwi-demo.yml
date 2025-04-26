@@ -13,7 +13,8 @@ jobs:
       - name: Install Wokwi CLI
         run: curl -L https://wokwi.com/ci/install.sh | sh
 
-      - name: Wokwi Simulation
-        run: wokwi-cli Wokwi/Pametno zvono i pametna brava --timeout 120
-        env:
+      - name: Test with Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
           token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          path: Wokwi\Pametno zvono i pametna brava # directory with wokwi.toml, relative to repo's root
