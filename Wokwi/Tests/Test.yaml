@@ -3,9 +3,9 @@ version: 1
 author: lhojski
 
 steps:
-  - wait-serial: "UspjeÅ¡no povezano na Blynk"
+  - wait-serial: "Uspjesno povezano na Blynk"
   - delay: 3000ms
-  - expect-pin:
+  - set-control:
       part-id: btn1
       control: pressed
       value: 1

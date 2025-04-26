@@ -192,20 +192,20 @@ void setup()
   if (WiFi.status() == WL_CONNECTED)
   {
     wifiConnected = true;
-    Serial.println("\nUspješno povezano na WiFi");
+    Serial.println("\nUspjesno povezano na WiFi");
     Blynk.config(auth);
     if (Blynk.connect())
     {
-      Serial.println("Uspješno povezano na Blynk");
+      Serial.println("Uspjesno povezano na Blynk");
     }
     else
     {
-      Serial.println("Neuspješno povezivanje na Blynk");
+      Serial.println("Neuspjesno povezivanje na Blynk");
     }
   }
   else
   {
-    Serial.println("\nNeuspješno povezivanje na WiFi");
+    Serial.println("\nNeuspjesno povezivanje na WiFi");
   }
 
   lastActivityTime = millis(); // Postavljanje početnog vremena aktivnosti
