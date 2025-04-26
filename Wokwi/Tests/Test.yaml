@@ -1,0 +1,13 @@
+name: Zvono
+version: 1
+author: lhojski
+
+steps:
+  - wait-serial: "Uspješno povezano na Blynk"
+  - delay: 3000ms
+  - expect-pin:
+      part-id: BUTTON_PIN
+      control: pressed
+      value: 1
+  - delay: 500ms
+  - wait-serial: "Poslana notifikacija: Pritisnuto je zvono!"
