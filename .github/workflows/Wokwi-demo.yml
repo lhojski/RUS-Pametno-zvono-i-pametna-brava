@@ -1,6 +1,7 @@
 name: Wokwi CI for Smart Doorbell
 
 on: [push]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -14,7 +15,12 @@ jobs:
           python-version: '3.10'
 
       - name: Install Wokwi CLI
-        run: pip install wokwi
+        run: curl -L https://wokwi.com/ci/install.sh | sh
+        env:
+          WOKWI_CLI_INSTALL_DIR: ${{ github.workspace }}/.local/bin
+      
+      - name: Add Wokwi CLI to PATH
+        run: echo "${{ github.workspace }}/.local/bin" >> $GITHUB_PATH
 
       - name: Verify project structure
         run: |
@@ -24,7 +30,8 @@ jobs:
       - name: Run Wokwi simulation
         working-directory: ./Wokwi/Pametno zvono i pametna brava
         run: |
+          wokwi --version
           wokwi validate
           wokwi simulate --timeout 120
         env:
-          WOKWI_GITHUB_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
+          WOKWI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
