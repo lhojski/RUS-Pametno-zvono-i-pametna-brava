@@ -1,0 +1,34 @@
+name: PlatformIO CI with Wokwi
+
+on: workflow_dispatch
+
+jobs:
+  platformio:
+    name: Wokwi Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install PlatformIO Core
+        run: pip install --upgrade platformio
+
+      - name: Install Wokwi CLI
+        run: curl -L https://wokwi.com/ci/install.sh | sh
+
+      - name: Build with PlatformIO
+        working-directory: ./Wokwi/Pametno zvono i pametna brava
+        run: |
+          pio run -v
+          ls -la .pio/build/  # Verify build output
+
+      - name: Test with Wokwi
+        uses: wokwi/wokwi-ci-action@v1
+        with:
+          token: ${{ secrets.WOKWI_CLI_TOKEN }}
+          path: Wokwi/Pametno zvono i pametna brava # directory with wokwi.toml, relative to repo's root
+          expect_text: "Measured distance: 245.97 cm" # optional
