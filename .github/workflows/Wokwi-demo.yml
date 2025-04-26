@@ -34,4 +34,4 @@ jobs:
           wokwi validate
           wokwi simulate --timeout 120
         env:
-          WOKWI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WOKWI_GITHUB_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
