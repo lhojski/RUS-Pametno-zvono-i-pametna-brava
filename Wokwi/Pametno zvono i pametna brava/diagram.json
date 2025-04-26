@@ -67,6 +67,13 @@
       "top": -267.3,
       "left": -4.1,
       "attrs": { "distance": "246" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -41.8,
+      "left": 182.4,
+      "attrs": { "color": "blue", "xray": "1" }
     }
   ],
   "connections": [
@@ -97,7 +104,9 @@
     [ "ultrasonic1:VCC", "esp:5V", "red", [ "v0" ] ],
     [ "ultrasonic1:GND", "esp:GND.2", "black", [ "v0" ] ],
     [ "ultrasonic1:ECHO", "esp:33", "green", [ "v0" ] ],
-    [ "ultrasonic1:TRIG", "esp:32", "green", [ "v0" ] ]
+    [ "ultrasonic1:TRIG", "esp:32", "green", [ "v0" ] ],
+    [ "btn1:2.l", "esp:GND.2", "green", [ "h0" ] ],
+    [ "btn1:1.l", "esp:4", "green", [ "h0" ] ]
   ],
   "dependencies": {}
 }
