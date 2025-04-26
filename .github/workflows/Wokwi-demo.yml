@@ -1,24 +1,35 @@
-name: Build and test
+name: Wokwi CI for Smart Doorbell
 
 on:
-  workflow_dispatch:
   push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Debug directory structure
-        run: ls -R
-      - name: esp-idf build
-        uses: espressif/esp-idf-ci-action@v1
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          esp_idf_version: v5.3
-          target: esp32
-          path: 'Wokwi/Pametno zvono i pametna brava'
-      - name: Test with Wokwi
-        uses: wokwi/wokwi-ci-action@v1
-        with:
-          token: ${{ secrets.WOKWI_CLI_TOKEN }}
-          expect_text: "any web server online"
+          python-version: '3.10'
+
+      - name: Install Wokwi CLI
+        run: pip install wokwi
+
+      - name: Verify project structure
+        run: |
+          ls -la "Wokwi/Pametno zvono i pametna brava"
+          ls -la "Wokwi/Pametno zvono i pametna brava/src"
+
+      - name: Run Wokwi simulation
+        working-directory: ./Wokwi/Pametno zvono i pametna brava
+        run: |
+          wokwi validate
+          wokwi simulate --timeout 120
+        env:
+          WOKWI_GITHUB_TOKEN: ${{ secrets.WOKWI_CLI_TOKEN }}
