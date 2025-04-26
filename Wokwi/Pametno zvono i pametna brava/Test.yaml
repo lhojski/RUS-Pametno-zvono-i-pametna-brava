@@ -5,7 +5,7 @@ author: lhojski
 steps:
   - wait-serial: "Uspjesno povezano na Blynk"
   - delay: 3000ms
-  - expect-pin:
+  - set-control:
       part-id: btn1
       control: pressed
       value: 1
