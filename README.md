@@ -35,7 +35,6 @@ Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. 
 | Keypad                | 1        | Za unos lozinke radi ako korisnik želi "ručno" otključati bravu. |
 | Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                      |
 | Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej).   |
-| Breadboard + žice     | -        | Za povezivanje komponenti.                                       |
 
 ---
 
