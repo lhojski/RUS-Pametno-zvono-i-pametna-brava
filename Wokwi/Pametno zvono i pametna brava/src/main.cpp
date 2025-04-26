@@ -1,6 +1,27 @@
+#define BLYNK_TEMPLATE_ID "TMPL4yAFYgzJz"
+#define BLYNK_TEMPLATE_NAME "RUS Pametno zvono i pametna brava"
+#define BLYNK_AUTH_TOKEN "tsLSOhZc685__mTKTP0wBSQgw78Ln261"
+
 #include <Keypad.h>
 #include <ESP32Servo.h>
 #include <esp_sleep.h>
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <BlynkSimpleEsp32.h>
+
+char auth[] = BLYNK_AUTH_TOKEN;
+char ssid[] = "Wokwi-GUEST";
+char pass[] = "";
+
+// Virtual pin for Blynk button
+#define BLYNK_UNLOCK_PIN V1
+#define BLYNK_NOTIFICATION_PIN V2
+
+// Notification variables
+bool lastButtonState = HIGH;
+bool lastDetectionState = false;
+unsigned long lastNotificationTime = 0;
+const unsigned long NOTIFICATION_COOLDOWN = 1000; // 5 seconds between notifications
 
 // Keypad setup
 const byte ROWS = 4;
@@ -28,11 +49,13 @@ const int RGB_GREEN = 26;
 const int RGB_BLUE = 27;
 const int TRIG_PIN = 32;
 const int ECHO_PIN = 33;
+const int BUTTON_PIN = 4; // Interrupt button
 
 // HC-SR04 settings
-const float DETECTION_THRESHOLD = 50.0; // 50cm threshold
+const float DETECTION_THRESHOLD = 200.0; // 50cm threshold
 const unsigned long DETECTION_INTERVAL = 500;
 const unsigned long INACTIVITY_TIMEOUT = 10000; // 10 seconds no activity -> sleep
+const unsigned long BUTTON_LED_DURATION = 2000; // 2 seconds LED on for button press
 
 // Servo setup
 Servo servo;
@@ -43,6 +66,7 @@ const int SERVO_CLOSED_ANGLE = 0;
 unsigned long unlockTime = 0;
 unsigned long lastDetectionTime = 0;
 unsigned long lastActivityTime = 0;
+unsigned long buttonPressTime = 0;
 const unsigned long UNLOCK_DURATION = 10000;
 const unsigned long RED_LED_DURATION = 3000;
 
@@ -51,7 +75,10 @@ bool deviceUnlocked = false;
 bool inRedState = false;
 bool objectDetected = false;
 bool wokeFromSleep = false;
+bool wifiConnected = false;
+bool buttonPressed = false;
 
+// Function prototypes
 float measureDistance();
 void checkDistance();
 void goToSleep();
@@ -60,6 +87,19 @@ void setRGBColor(int red, int green, int blue);
 void unlockDevice();
 void resetToLockedState();
 void wrongPassword();
+void IRAM_ATTR buttonISR();
+void sendBlynkNotification(const char *message);
+
+// Blynk write function for virtual pin
+BLYNK_WRITE(BLYNK_UNLOCK_PIN)
+{
+  int pinValue = param.asInt();
+  if (pinValue == 1)
+  {
+    unlockDevice();
+    lastActivityTime = millis(); // Reset inactivity timer
+  }
+}
 
 void setup()
 {
@@ -73,6 +113,10 @@ void setup()
   pinMode(RGB_BLUE, OUTPUT);
   pinMode(TRIG_PIN, OUTPUT);
   pinMode(ECHO_PIN, INPUT);
+
+  // Initialize interrupt button with internal pullup
+  pinMode(BUTTON_PIN, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(BUTTON_PIN), buttonISR, FALLING);
 
   // Initialize servo
   servo.setPeriodHertz(50);
@@ -104,11 +148,63 @@ void setup()
     }
   }
 
+  // Connect to WiFi and Blynk
+  WiFi.begin(ssid, pass);
+  Serial.print("Connecting to WiFi");
+  unsigned long wifiStartTime = millis();
+
+  while (WiFi.status() != WL_CONNECTED && millis() - wifiStartTime < 10000)
+  {
+    delay(500);
+    Serial.print(".");
+  }
+
+  if (WiFi.status() == WL_CONNECTED)
+  {
+    wifiConnected = true;
+    Serial.println("\nConnected to WiFi");
+    Blynk.config(auth);
+    if (Blynk.connect())
+    {
+      Serial.println("Connected to Blynk");
+    }
+    else
+    {
+      Serial.println("Blynk connection failed");
+    }
+  }
+  else
+  {
+    Serial.println("\nWiFi connection failed");
+  }
+
   lastActivityTime = millis();
 }
 
 void loop()
 {
+  // Run Blynk if connected
+  if (wifiConnected)
+  {
+    Blynk.run();
+  }
+
+  // Handle button press
+  if (buttonPressed)
+  {
+    buttonPressed = false;
+    digitalWrite(LED_PIN, HIGH);
+    beep(500);
+    buttonPressTime = millis();
+    sendBlynkNotification("Pritisnuto je zvono!");
+  }
+
+  // Turn off LED after duration
+  if (digitalRead(LED_PIN) && millis() - buttonPressTime > BUTTON_LED_DURATION)
+  {
+    digitalWrite(LED_PIN, LOW);
+  }
+
   // Check for inactivity timeout
   if (millis() - lastActivityTime > INACTIVITY_TIMEOUT && !deviceUnlocked)
   {
@@ -185,6 +281,12 @@ void loop()
   }
 }
 
+// Interrupt Service Routine for button
+void IRAM_ATTR buttonISR()
+{
+  buttonPressed = true;
+}
+
 float measureDistance()
 {
   digitalWrite(TRIG_PIN, LOW);
@@ -215,6 +317,7 @@ void checkDistance()
       digitalWrite(LED_PIN, HIGH);
       beep(100);
       lastActivityTime = millis(); // Reset inactivity timer
+      sendBlynkNotification("Netko je pred vratima!");
     }
   }
   else
@@ -232,7 +335,6 @@ void goToSleep()
   Serial.println("Going to sleep...");
 
   // Configure wakeup on echo pin (GPIO 33)
-  // We'll wake on any HIGH pulse but verify distance after waking
   uint64_t mask = 1ULL << ECHO_PIN;
   esp_sleep_enable_ext1_wakeup(mask, ESP_EXT1_WAKEUP_ANY_HIGH);
 
@@ -294,4 +396,19 @@ void wrongPassword()
   beep(500);
   delay(500);
   setRGBColor(0, 0, 0);
+}
+
+void sendBlynkNotification(const char *message)
+{
+  if (wifiConnected && Blynk.connected())
+  {
+    if (millis() - lastNotificationTime > NOTIFICATION_COOLDOWN)
+    {
+      Blynk.virtualWrite(BLYNK_NOTIFICATION_PIN, message);
+      Blynk.logEvent("security_alert", message);
+      lastNotificationTime = millis();
+      Serial.print("Notification sent: ");
+      Serial.println(message);
+    }
+  }
 }
