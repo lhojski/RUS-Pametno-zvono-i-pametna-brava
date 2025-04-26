@@ -1,6 +1,9 @@
-name: Zvono
 version: 1
-author: lhojski
-
-steps:
-  - wait-serial: "Uspjesno povezano na Blynk"
+timeout: 30s # Fails if message doesn't appear in 30s
+scripts:
+  - ["wait-for", "Uspjesno povezano na Blynk", 20000] # Waits max 20s
+  - [
+      "assert",
+      "serial.includes('Uspjesno povezano na Blynk')",
+      "Blynk connection failed",
+    ]
