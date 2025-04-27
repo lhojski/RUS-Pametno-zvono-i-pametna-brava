@@ -422,7 +422,7 @@ void setRGBColor(int red, int green, int blue)
  */
 void unlockDevice()
 {
-  Serial.println("Točna lozinka! Otključavanje...");
+  Serial.println("Tocna lozinka! Otkljucavanje...");
   deviceUnlocked = true;
   unlockTime = millis();
   servo.write(SERVO_OPEN_ANGLE);

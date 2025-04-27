@@ -1,41 +1,76 @@
 # Pametno zvono i pametna brava
 
-Ovaj projekt kombinira pametno zvono i pametnu bravu s daljinskim upravljanjem. Koristi se ESP32 za osnovnu funkcionalnost.
+## Opis projekta
 
-## **Funkcionalnosti**
+Pametno zvono i pametna brava projekt su usmjereni na modernizaciju sigurnosti doma. Ideja je automatizirati zaključavanje vrata te omogućiti praćenje aktivnosti ispred ulaza putem senzora pokreta i zvona. Sustav korisniku šalje notifikacije na mobitel prilikom detekcije pokreta ili pritiska na zvono, a vrata se mogu otključati i daljinski pomoću mobilnog uređaja.
 
-### **1. Pametno zvono**
+## Cilj projekta
 
-| ID       | Funkcionalnost        | Opis                                                            |
-| -------- | --------------------- | --------------------------------------------------------------- |
-| **FR-1** | Detekcija pokreta     | PIR senzor detektira pokret i aktivira LED osvjetljenje gumba.  |
-| **FR-2** | Osvjetljenje gumba    | LED dioda osvijetli gumb nakon detekcije pokreta.               |
-| **FR-3** | Zvuk zvona            | Piezo buzzer reproducira zvuk prilikom pritiska na gumb.        |
-| **FR-4** | Notifikacija vlasniku | Wi-Fi modul šalje obavijest na mobilni uredaj (Blynk/Telegram). |
+Cilj projekta je povećati sigurnost i praktičnost ulaska u dom, omogućiti brzo reagiranje na događaje ispred vrata te smanjiti potrebu za fizičkim ključevima.
 
-### **2. Pametna brava**
+## Motivacija
 
-| ID       | Funkcionalnost                       | Opis                                                                 |
-| -------- | ------------------------------------ | -------------------------------------------------------------------- |
-| **FR-6** | Daljinsko otključavanje              | Vlasnik može otključati bravu putem mobilne aplikacije (Blynk/MQTT). |
-| **FR-7** | Servo/elektromagnetska brava         | Servo motor ili elektromagnetska brava izvodi fizicko otključavanje. |
-| **FR-8** | Automatsko zaključavanje             | Brava se automatski zaključa nakon određenog vremena (npr. 10s).     |
-| **FR-9** | Status brave (otključano/zaključano) | LED indikator ili notifikacija prikazuje trenutni status brave.      |
+Motivacija za razvoj projekta proizašla je iz želje za većom kontrolom nad pristupom vlastitom domu, bržim reagiranjem na posjetitelje te unaprjeđenjem svakodnevne sigurnosti korištenjem modernih rješenja.
 
 ---
 
-## 📌**Potrebne komponente**
+## 📋 Funkcionalni zahtjevi
 
-| Komponenta            | Količina | Opis                                                             |
-| --------------------- | -------- | ---------------------------------------------------------------- |
-| ESP32                 | 1        | Glavni mikrokontroler.                                           |
-| PIR senzor (HC-SR501) | 1        | Detektira pokret i aktivira LED.                                 |
-| LED dioda             | 1        | Osvjetljava gumb za zvono.                                       |
-| Tipka                 | 1        | Za aktivaciju zvona.                                             |
-| Keypad                | 1        | Za unos lozinke radi ako korisnik želi "ručno" otključati bravu. |
-| Piezo buzzer          | 1        | Reproducira zvuk prilikom pritiska na gumb.                      |
-| Servo motor (SG90)    | 1        | Simulira mehanizam brave (ili elektromagnetska brava + relej).   |
+### Pametno zvono
+
+| ID       | Funkcionalnost      | Opis                                                     |
+| -------- | ------------------- | -------------------------------------------------------- |
+| **FR-1** | Detekcija pokreta   | PIR senzor detektira pokret ispred vrata                 |
+| **FR-2** | Osvjetljenje gumba  | LED osvijetli gumb nakon detekcije pokreta               |
+| **FR-3** | Aktivacija zvona    | Piezo buzzer reproducira zvuk prilikom pritiska na gumb  |
+| **FR-4** | Slanje notifikacija | Šalje obavijest vlasniku putem Blynk/Telegram aplikacije |
+
+### Pametna brava
+
+| ID       | Funkcionalnost          | Opis                                                   |
+| -------- | ----------------------- | ------------------------------------------------------ |
+| **FR-6** | Daljinsko otključavanje | Otključavanje putem mobilne aplikacije                 |
+| **FR-7** | Upravljanje bravom      | Servo motor izvodi fizičko otključavanje/zaključavanje |
+| **FR-8** | Auto-zaključavanje      | Automatsko zaključavanje nakon 10 sekundi              |
+| **FR-9** | Status brave            | RGB indikator prikazuje trenutno stanje brave          |
 
 ---
+
+## Instalacija i testiranje
+
+### Online testiranje
+
+Projekt je moguće testirati online preko sljedećeg linka:  
+[Pokreni simulaciju](https://wokwi.com/projects/429053956552990721)
+
+### Lokalan razvoj i simulacija
+
+Za lokalno pokretanje projekta potrebno je:
+
+1. Klonirati repozitorij:
+   ```bash
+   git clone https://github.com/lhojski/RUS-Pametno-zvono-i-pametna-brava
+   ```
+2. Otvoriti projekt u Visual Studio Code.
+3. Instalirati ekstenzije
+   - Wokwi for VS Code
+   - PlatformIO IDE
+4. Buildati projekt
+5. Pokrenuti simulaciju unutar Visual Studio Code-a.
+
+### Realna implementacija
+
+Za stvarnu instalaciju potrebno je nabaviti sljedeće komponente:
+
+- ESP32 razvojna pločica
+- Piezo buzzer
+- Gumb
+- HC-SR04 ultrazvučni senzor
+- RGB LED dioda
+- Obična LED dioda
+- Keypad tipkovnica
+- Servo motor (za zaključavanje)
+
+Komponente treba povezati prema priloženoj shemi (vidi sliku u projektu).
 
 **Autori:** Damjan Jurak i Leon Hojski
