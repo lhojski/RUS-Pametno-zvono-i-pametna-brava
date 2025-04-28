@@ -58,6 +58,34 @@ Za lokalno pokretanje projekta potrebno je:
 4. Buildati projekt
 5. Pokrenuti simulaciju unutar Visual Studio Code-a.
 
+# Implementacija daljinskog otključavanja pomoću Blynk-a
+
+Slijedite ove korake za postavljanje Blynk projekta:
+
+## 1. Blynk Račun
+
+- Ako nemate račun, registrirajte se na [Blynk platformi](https://blynk.io/)
+- Prijavite se sa postojećim vjerodajnicama ako već imate račun
+
+## 2. Priprema Dashboarda
+
+- Kreirajte novi projekt ili otvorite postojeći
+- Dodajte sljedeće virtualne pinove:
+  - `Virtual Pin V1` (tip: Integer)
+  - `Virtual Pin V2` (tip: String)
+- Podesite widgete prema potrebi (npr. gumb/switch i label)
+
+## 3. Konfiguracija Koda
+
+- Pronađite Template ID, Ime projekta i Token u Blynk aplikaciji
+- Ažurirajte sljedeće varijable u kodu:
+
+```cpp
+#define BLYNK_TEMPLATE_ID     "VAŠ_TEMPLATE_ID"
+#define BLYNK_TEMPLATE_NAME   "VAŠ_NAZIV_PROJEKTA"
+#define BLYNK_AUTH_TOKEN      "VAŠ_TOKEN"
+```
+
 ### Realna implementacija
 
 Za stvarnu instalaciju potrebno je nabaviti sljedeće komponente:
